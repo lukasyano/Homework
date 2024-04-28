@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A22BDD1A5500A44B4C /* HomeworkApp.swift */; };
-		128710A52BDD1A5500A44B4C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A42BDD1A5500A44B4C /* ContentView.swift */; };
+		128710A52BDD1A5500A44B4C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A42BDD1A5500A44B4C /* MainScreen.swift */; };
 		128710A72BDD1A5600A44B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128710A62BDD1A5600A44B4C /* Assets.xcassets */; };
 		128710AA2BDD1A5600A44B4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128710A92BDD1A5600A44B4C /* Preview Assets.xcassets */; };
 		128710B42BDD1A5600A44B4C /* HomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710B32BDD1A5600A44B4C /* HomeworkTests.swift */; };
@@ -44,7 +44,7 @@
 /* Begin PBXFileReference section */
 		1287109F2BDD1A5500A44B4C /* Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128710A22BDD1A5500A44B4C /* HomeworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkApp.swift; sourceTree = "<group>"; };
-		128710A42BDD1A5500A44B4C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		128710A42BDD1A5500A44B4C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		128710A62BDD1A5600A44B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128710A92BDD1A5600A44B4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		128710AF2BDD1A5600A44B4C /* HomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +113,7 @@
 				128710D12BDD246B00A44B4C /* Services */,
 				128710CE2BDD1D9D00A44B4C /* Models */,
 				128710A22BDD1A5500A44B4C /* HomeworkApp.swift */,
-				128710A42BDD1A5500A44B4C /* ContentView.swift */,
+				128710A42BDD1A5500A44B4C /* MainScreen.swift */,
 				128710A62BDD1A5600A44B4C /* Assets.xcassets */,
 				128710A82BDD1A5600A44B4C /* Preview Content */,
 			);
@@ -313,7 +313,7 @@
 				128710CD2BDD1D8400A44B4C /* Post.swift in Sources */,
 				128710D02BDD1DBF00A44B4C /* Company.swift in Sources */,
 				128710EA2BDE321700A44B4C /* User.swift in Sources */,
-				128710A52BDD1A5500A44B4C /* ContentView.swift in Sources */,
+				128710A52BDD1A5500A44B4C /* MainScreen.swift in Sources */,
 				128710D32BDD24C800A44B4C /* WebService.swift in Sources */,
 				128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */,
 				128710EC2BDE322D00A44B4C /* Address.swift in Sources */,
