@@ -6,9 +6,14 @@ struct HomeworkApp: App {
     private let apiService = ApiService()
     var body: some Scene {
         WindowGroup {
+            let postRepository = PostRepository(api: apiService)
+            let userRepository = UserRepository(api: apiService)
+            let postsViewModel = PostsViewModel(postRepository: postRepository, userRepository: userRepository)
+
             MainScreen()
-                .environmentObject(PostRepository(api: apiService))
-                .environmentObject(UserRepository(api: apiService))
+                .environmentObject(postRepository)
+                .environmentObject(userRepository)
+                .environmentObject(postsViewModel)
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }

@@ -23,7 +23,7 @@
 		12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430A2BE0EC4200B2C454 /* Homework.xcdatamodeld */; };
 		12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430D2BE0F5D000B2C454 /* PostRepository.swift */; };
 		12C643102BE0F5DF00B2C454 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */; };
-		12C643122BE100B100B2C454 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643112BE100B100B2C454 /* PostsModel.swift */; };
+		12C643122BE100B100B2C454 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643112BE100B100B2C454 /* PostsViewModel.swift */; };
 		12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643152BE101CC00B2C454 /* MainScreen.swift */; };
 		12C643182BE1314400B2C454 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643172BE1314400B2C454 /* Mapper.swift */; };
 		12C6431C2BE1320000B2C454 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6431B2BE1320000B2C454 /* PostEntity.swift */; };
@@ -65,7 +65,7 @@
 		12C6430B2BE0EC4200B2C454 /* DBPostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DBPostModel.xcdatamodel; sourceTree = "<group>"; };
 		12C6430D2BE0F5D000B2C454 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		12C643112BE100B100B2C454 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		12C643112BE100B100B2C454 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		12C643152BE101CC00B2C454 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		12C643172BE1314400B2C454 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		12C6431B2BE1320000B2C454 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
@@ -207,7 +207,7 @@
 		12C643142BE1012400B2C454 /* posts */ = {
 			isa = PBXGroup;
 			children = (
-				12C643112BE100B100B2C454 /* PostsModel.swift */,
+				12C643112BE100B100B2C454 /* PostsViewModel.swift */,
 				128710A42BDD1A5500A44B4C /* PostsScreenView.swift */,
 			);
 			path = posts;
@@ -377,7 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */,
-				12C643122BE100B100B2C454 /* PostsModel.swift in Sources */,
+				12C643122BE100B100B2C454 /* PostsViewModel.swift in Sources */,
 				12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */,
 				12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */,
 				12C643182BE1314400B2C454 /* Mapper.swift in Sources */,

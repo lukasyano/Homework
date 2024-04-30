@@ -1,26 +1,21 @@
 import SwiftUI
 
 struct PostsScreenView: View {
-    @EnvironmentObject private var postRepository : PostRepository
+//    @EnvironmentObject private var vm: PostsViewModel
+//    @FetchRequest(sortDescriptors: []) var data: FetchedResults<DBPostModel>
+
     var body: some View {
         NavigationStack {
             ZStack {
                 Color.red.ignoresSafeArea().grayscale(0.7)
-            }
-            .onAppear{
-                postRepository.getPosts { postEntity, error in
-                    if let postEntity = postEntity{
-                        print(postEntity)
-                        print("Count: \(postEntity.count)")
-                    }
-                }
-            }
-            .navigationTitle("Posts")
-            .navigationBarTitleDisplayMode(.inline)
-        }
-    }
-}
 
-#Preview {
-    PostsScreenView()
+//                List(data, id: \.self) { entity in
+//                    Text("\(String(describing: entity.postTitle)) \(String(describing: entity.userName))")
+//                }
+            }
+        }
+
+        .navigationTitle("Posts")
+        .navigationBarTitleDisplayMode(.inline)
+    }
 }
