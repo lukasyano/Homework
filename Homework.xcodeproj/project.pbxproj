@@ -14,14 +14,12 @@
 		128710B42BDD1A5600A44B4C /* HomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710B32BDD1A5600A44B4C /* HomeworkTests.swift */; };
 		128710BE2BDD1A5600A44B4C /* HomeworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710BD2BDD1A5600A44B4C /* HomeworkUITests.swift */; };
 		128710C02BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710BF2BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift */; };
-		128710CD2BDD1D8400A44B4C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CC2BDD1D8400A44B4C /* Post.swift */; };
-		128710D02BDD1DBF00A44B4C /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CF2BDD1DBF00A44B4C /* Company.swift */; };
-		128710D32BDD24C800A44B4C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710D22BDD24C800A44B4C /* WebService.swift */; };
+		128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */; };
+		128710D32BDD24C800A44B4C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710D22BDD24C800A44B4C /* ApiService.swift */; };
 		128710E52BDD4B2A00A44B4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 128710E42BDD4B2A00A44B4C /* Alamofire */; };
 		128710E72BDD4B2A00A44B4C /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 128710E62BDD4B2A00A44B4C /* AlamofireDynamic */; };
-		128710EA2BDE321700A44B4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* User.swift */; };
-		128710EC2BDE322D00A44B4C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710EB2BDE322D00A44B4C /* Address.swift */; };
-		128710EE2BDE324E00A44B4C /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710ED2BDE324E00A44B4C /* Geo.swift */; };
+		128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* ApiUserModel.swift */; };
+		12C643012BE0E01100B2C454 /* DBPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643002BE0E01100B2C454 /* DBPostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,12 +50,10 @@
 		128710B92BDD1A5600A44B4C /* HomeworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		128710BD2BDD1A5600A44B4C /* HomeworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkUITests.swift; sourceTree = "<group>"; };
 		128710BF2BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		128710CC2BDD1D8400A44B4C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		128710CF2BDD1DBF00A44B4C /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
-		128710D22BDD24C800A44B4C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
-		128710E92BDE321700A44B4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		128710EB2BDE322D00A44B4C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		128710ED2BDE324E00A44B4C /* Geo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
+		128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPostModel.swift; sourceTree = "<group>"; };
+		128710D22BDD24C800A44B4C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		128710E92BDE321700A44B4C /* ApiUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUserModel.swift; sourceTree = "<group>"; };
+		12C643002BE0E01100B2C454 /* DBPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBPostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +106,8 @@
 		128710A12BDD1A5500A44B4C /* Homework */ = {
 			isa = PBXGroup;
 			children = (
-				128710D12BDD246B00A44B4C /* Services */,
-				128710CE2BDD1D9D00A44B4C /* Models */,
+				12C642FF2BE0DF8000B2C454 /* Database */,
+				128710D12BDD246B00A44B4C /* Api */,
 				128710A22BDD1A5500A44B4C /* HomeworkApp.swift */,
 				128710A42BDD1A5500A44B4C /* MainScreen.swift */,
 				128710A62BDD1A5600A44B4C /* Assets.xcassets */,
@@ -145,32 +141,22 @@
 			path = HomeworkUITests;
 			sourceTree = "<group>";
 		};
-		128710CE2BDD1D9D00A44B4C /* Models */ = {
+		128710D12BDD246B00A44B4C /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				128710E82BDE31F200A44B4C /* User Details */,
-				128710CC2BDD1D8400A44B4C /* Post.swift */,
+				128710E92BDE321700A44B4C /* ApiUserModel.swift */,
+				128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */,
+				128710D22BDD24C800A44B4C /* ApiService.swift */,
 			);
-			path = Models;
+			path = Api;
 			sourceTree = "<group>";
 		};
-		128710D12BDD246B00A44B4C /* Services */ = {
+		12C642FF2BE0DF8000B2C454 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				128710D22BDD24C800A44B4C /* WebService.swift */,
+				12C643002BE0E01100B2C454 /* DBPostModel.swift */,
 			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		128710E82BDE31F200A44B4C /* User Details */ = {
-			isa = PBXGroup;
-			children = (
-				128710EB2BDE322D00A44B4C /* Address.swift */,
-				128710CF2BDD1DBF00A44B4C /* Company.swift */,
-				128710ED2BDE324E00A44B4C /* Geo.swift */,
-				128710E92BDE321700A44B4C /* User.swift */,
-			);
-			path = "User Details";
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,14 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128710CD2BDD1D8400A44B4C /* Post.swift in Sources */,
-				128710D02BDD1DBF00A44B4C /* Company.swift in Sources */,
-				128710EA2BDE321700A44B4C /* User.swift in Sources */,
+				128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */,
+				128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */,
 				128710A52BDD1A5500A44B4C /* MainScreen.swift in Sources */,
-				128710D32BDD24C800A44B4C /* WebService.swift in Sources */,
+				12C643012BE0E01100B2C454 /* DBPostModel.swift in Sources */,
+				128710D32BDD24C800A44B4C /* ApiService.swift in Sources */,
 				128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */,
-				128710EC2BDE322D00A44B4C /* Address.swift in Sources */,
-				128710EE2BDE324E00A44B4C /* Geo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
