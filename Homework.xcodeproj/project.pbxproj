@@ -25,6 +25,9 @@
 		12C643102BE0F5DF00B2C454 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */; };
 		12C643122BE100B100B2C454 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643112BE100B100B2C454 /* PostsModel.swift */; };
 		12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643152BE101CC00B2C454 /* MainScreen.swift */; };
+		12C643182BE1314400B2C454 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643172BE1314400B2C454 /* Mapper.swift */; };
+		12C6431C2BE1320000B2C454 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6431B2BE1320000B2C454 /* PostEntity.swift */; };
+		12C643202BE1327300B2C454 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6431F2BE1327300B2C454 /* UserEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		12C643112BE100B100B2C454 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		12C643152BE101CC00B2C454 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		12C643172BE1314400B2C454 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		12C6431B2BE1320000B2C454 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
+		12C6431F2BE1327300B2C454 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +160,7 @@
 		128710D12BDD246B00A44B4C /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				128710E92BDE321700A44B4C /* ApiUserModel.swift */,
-				128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */,
+				12C643192BE131D300B2C454 /* Model */,
 				128710D22BDD24C800A44B4C /* ApiService.swift */,
 			);
 			path = Api;
@@ -191,6 +196,8 @@
 		12C643042BE0E2FC00B2C454 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				12C6431A2BE131E800B2C454 /* Entity */,
+				12C6431E2BE1323F00B2C454 /* Mapper */,
 				12C6430D2BE0F5D000B2C454 /* PostRepository.swift */,
 				12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */,
 			);
@@ -204,6 +211,32 @@
 				128710A42BDD1A5500A44B4C /* PostsScreenView.swift */,
 			);
 			path = posts;
+			sourceTree = "<group>";
+		};
+		12C643192BE131D300B2C454 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */,
+				128710E92BDE321700A44B4C /* ApiUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12C6431A2BE131E800B2C454 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				12C6431B2BE1320000B2C454 /* PostEntity.swift */,
+				12C6431F2BE1327300B2C454 /* UserEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		12C6431E2BE1323F00B2C454 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				12C643172BE1314400B2C454 /* Mapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,11 +380,14 @@
 				12C643122BE100B100B2C454 /* PostsModel.swift in Sources */,
 				12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */,
 				12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */,
+				12C643182BE1314400B2C454 /* Mapper.swift in Sources */,
 				12C643102BE0F5DF00B2C454 /* UserRepository.swift in Sources */,
 				128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */,
 				128710A52BDD1A5500A44B4C /* PostsScreenView.swift in Sources */,
 				12C643092BE0E4FF00B2C454 /* DataController.swift in Sources */,
 				12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */,
+				12C6431C2BE1320000B2C454 /* PostEntity.swift in Sources */,
+				12C643202BE1327300B2C454 /* UserEntity.swift in Sources */,
 				128710D32BDD24C800A44B4C /* ApiService.swift in Sources */,
 				128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */,
 			);
