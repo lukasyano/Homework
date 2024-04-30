@@ -2,7 +2,7 @@ import CoreData
 import Foundation
 
 class DataController: ObservableObject {
-    @Published var error: String = ""
+    @Published var errorMessage: String = ""
     let container: NSPersistentContainer
 
     init() {
@@ -11,9 +11,9 @@ class DataController: ObservableObject {
     }
 
     private func loadPersistentStores() {
-        container.loadPersistentStores { description, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
-                self.error = error.localizedDescription
+                self.errorMessage = error.localizedDescription
             }
         }
     }

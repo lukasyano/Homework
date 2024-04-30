@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A22BDD1A5500A44B4C /* HomeworkApp.swift */; };
-		128710A52BDD1A5500A44B4C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A42BDD1A5500A44B4C /* MainScreen.swift */; };
+		128710A52BDD1A5500A44B4C /* PostsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A42BDD1A5500A44B4C /* PostsScreenView.swift */; };
 		128710A72BDD1A5600A44B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128710A62BDD1A5600A44B4C /* Assets.xcassets */; };
 		128710AA2BDD1A5600A44B4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128710A92BDD1A5600A44B4C /* Preview Assets.xcassets */; };
 		128710B42BDD1A5600A44B4C /* HomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710B32BDD1A5600A44B4C /* HomeworkTests.swift */; };
@@ -23,6 +23,8 @@
 		12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430A2BE0EC4200B2C454 /* Homework.xcdatamodeld */; };
 		12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430D2BE0F5D000B2C454 /* PostRepository.swift */; };
 		12C643102BE0F5DF00B2C454 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */; };
+		12C643122BE100B100B2C454 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643112BE100B100B2C454 /* PostsModel.swift */; };
+		12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643152BE101CC00B2C454 /* MainScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +47,7 @@
 /* Begin PBXFileReference section */
 		1287109F2BDD1A5500A44B4C /* Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128710A22BDD1A5500A44B4C /* HomeworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkApp.swift; sourceTree = "<group>"; };
-		128710A42BDD1A5500A44B4C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		128710A42BDD1A5500A44B4C /* PostsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsScreenView.swift; sourceTree = "<group>"; };
 		128710A62BDD1A5600A44B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128710A92BDD1A5600A44B4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		128710AF2BDD1A5600A44B4C /* HomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +62,8 @@
 		12C6430B2BE0EC4200B2C454 /* DBPostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DBPostModel.xcdatamodel; sourceTree = "<group>"; };
 		12C6430D2BE0F5D000B2C454 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		12C643112BE100B100B2C454 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		12C643152BE101CC00B2C454 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +173,8 @@
 		12C643022BE0E29100B2C454 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				128710A42BDD1A5500A44B4C /* MainScreen.swift */,
+				12C643142BE1012400B2C454 /* posts */,
+				12C643152BE101CC00B2C454 /* MainScreen.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -190,6 +195,15 @@
 				12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		12C643142BE1012400B2C454 /* posts */ = {
+			isa = PBXGroup;
+			children = (
+				12C643112BE100B100B2C454 /* PostsModel.swift */,
+				128710A42BDD1A5500A44B4C /* PostsScreenView.swift */,
+			);
+			path = posts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,10 +344,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */,
+				12C643122BE100B100B2C454 /* PostsModel.swift in Sources */,
 				12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */,
+				12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */,
 				12C643102BE0F5DF00B2C454 /* UserRepository.swift in Sources */,
 				128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */,
-				128710A52BDD1A5500A44B4C /* MainScreen.swift in Sources */,
+				128710A52BDD1A5500A44B4C /* PostsScreenView.swift in Sources */,
 				12C643092BE0E4FF00B2C454 /* DataController.swift in Sources */,
 				12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */,
 				128710D32BDD24C800A44B4C /* ApiService.swift in Sources */,

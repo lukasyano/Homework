@@ -1,11 +1,9 @@
 struct ApiPostModel: Decodable {
-    let userId: Int
-    let id: Int
     let title: String
+    let userId: Int
 
     private enum CodingKeys: String, CodingKey {
-        case userId
-        case id
         case title
+        case userId
     }
 }
