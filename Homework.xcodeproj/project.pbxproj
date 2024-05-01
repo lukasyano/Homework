@@ -17,7 +17,7 @@
 		128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */; };
 		128710D32BDD24C800A44B4C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710D22BDD24C800A44B4C /* ApiService.swift */; };
 		128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* ApiUserModel.swift */; };
-		12C643092BE0E4FF00B2C454 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643082BE0E4FF00B2C454 /* DataController.swift */; };
+		12C643092BE0E4FF00B2C454 /* CoreDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643082BE0E4FF00B2C454 /* CoreDataController.swift */; };
 		12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430A2BE0EC4200B2C454 /* Homework.xcdatamodeld */; };
 		12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430D2BE0F5D000B2C454 /* PostRepository.swift */; };
 		12C643102BE0F5DF00B2C454 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */; };
@@ -61,7 +61,7 @@
 		128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPostModel.swift; sourceTree = "<group>"; };
 		128710D22BDD24C800A44B4C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		128710E92BDE321700A44B4C /* ApiUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUserModel.swift; sourceTree = "<group>"; };
-		12C643082BE0E4FF00B2C454 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		12C643082BE0E4FF00B2C454 /* CoreDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataController.swift; sourceTree = "<group>"; };
 		12C6430B2BE0EC4200B2C454 /* DBPostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DBPostModel.xcdatamodel; sourceTree = "<group>"; };
 		12C6430D2BE0F5D000B2C454 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		12C6430F2BE0F5DF00B2C454 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 		12C642FF2BE0DF8000B2C454 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				12C643082BE0E4FF00B2C454 /* DataController.swift */,
+				12C643082BE0E4FF00B2C454 /* CoreDataController.swift */,
 				12C6430A2BE0EC4200B2C454 /* Homework.xcdatamodeld */,
 			);
 			path = Database;
@@ -385,7 +385,7 @@
 				12C643102BE0F5DF00B2C454 /* UserRepository.swift in Sources */,
 				128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */,
 				128710A52BDD1A5500A44B4C /* PostsScreenView.swift in Sources */,
-				12C643092BE0E4FF00B2C454 /* DataController.swift in Sources */,
+				12C643092BE0E4FF00B2C454 /* CoreDataController.swift in Sources */,
 				12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */,
 				12C6431C2BE1320000B2C454 /* PostEntity.swift in Sources */,
 				12C643202BE1327300B2C454 /* UserEntity.swift in Sources */,
