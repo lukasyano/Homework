@@ -8,7 +8,11 @@ struct HomeworkApp: App {
         WindowGroup {
             let postRepository = PostRepository(api: apiService)
             let userRepository = UserRepository(api: apiService)
-            let postsViewModel = PostsViewModel(postRepository: postRepository, userRepository: userRepository)
+            let postsViewModel = PostsViewModel(
+                postRepository: postRepository,
+                userRepository: userRepository,
+                managedObjectContext: dataController.container.viewContext
+            )
 
             MainScreen()
                 .environmentObject(postRepository)

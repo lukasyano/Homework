@@ -7,7 +7,7 @@ class UserRepository: ObservableObject {
         self.api = api
     }
 
-    func getUser(userId: Int, completion: @escaping (UserEntity?, Error?) -> Void) {
+    func getUser(_ userId: Int, completion: @escaping (UserEntity?, Error?) -> Void) {
         api.fetchUserData(userId: userId) { apiUserModel in
 
             switch apiUserModel.result {
