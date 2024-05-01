@@ -1,18 +1,19 @@
+import Combine
+import CoreData
 import SwiftUI
 
 struct PostsScreenView: View {
     @EnvironmentObject var viewModel: PostsViewModel
-    @FetchRequest(sortDescriptors: []) var posts: FetchedResults<DBPostModel>
 
     var body: some View {
         NavigationStack {
             ZStack {
-                List(posts, id: \.self) { item in
+                List(viewModel.posts, id: \.self) { item in
                     VStack(alignment: .leading, spacing: 10) {
-                        Text(item.postTitle ?? "Unknown")
+                        Text(item.postTitle)
                         HStack {
                             Spacer()
-                            Text(item.userName ?? "Unknown")
+                            Text(item.userName)
                         }
                     }
                 }
@@ -20,20 +21,13 @@ struct PostsScreenView: View {
             .navigationTitle("Posts")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        viewModel.clearAllData()
-                        DispatchQueue.main.async {
-                            self.viewModel.objectWillChange.send()
-                        }
-                    } label: {
+                    Button(action: viewModel.clearAllData) {
                         Text("ClearDB")
                     }
                 }
 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        viewModel.updateDb()
-                    } label: {
+                    Button(action: viewModel.updateDb) {
                         Text("UpdateDb")
                     }
                 }
@@ -41,5 +35,3 @@ struct PostsScreenView: View {
         }
     }
 }
-
-//                    Text("\(item.userName) + \(item.postTitle)")

@@ -11,7 +11,7 @@ struct HomeworkApp: App {
             let postsViewModel = PostsViewModel(
                 postRepository: postRepository,
                 userRepository: userRepository,
-                managedObjectContext: dataController.container.viewContext
+                moc: dataController.container.viewContext
             )
 
             MainScreen()
