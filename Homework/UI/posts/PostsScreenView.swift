@@ -9,13 +9,21 @@ struct PostsScreenView: View {
         NavigationStack {
             ZStack {
                 List(viewModel.posts, id: \.self) { item in
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text(item.postTitle)
-                        HStack {
-                            Spacer()
-                            Text(item.userName)
+                    
+                    NavigationLink {
+                        Color.black
+                    } label: {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(item.title)
+                            HStack {
+                                Spacer()
+                                Text(item.author)
+                            }
+                            
                         }
                     }
+
+                    
                 }
             }
             .navigationTitle("Posts")

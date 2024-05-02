@@ -19,8 +19,8 @@ class CoreDataController: ObservableObject {
         }
     }
 
-    func fetchPosts(completion: @escaping ([DBPostDetailsModel]) -> Void) {
-        let fetchRequest = DBPostDetailsModel.fetchRequest()
+    func fetchPosts(completion: @escaping ([DBPostModel]) -> Void) {
+        let fetchRequest = DBPostModel.fetchRequest()
         do {
             let dbPosts = try moc.fetch(fetchRequest)
             completion(dbPosts)
@@ -30,11 +30,17 @@ class CoreDataController: ObservableObject {
         }
     }
 
-    func saveToCoreData(_ postDetailsEntity: PostDetailsEntity) {
+    func saveToCoreData(_ postEntity: PostEntity) {
         moc.perform {
-            let dbPost = DBPostDetailsModel(context: self.moc)
-            dbPost.postTitle = postDetailsEntity.postTitle
-            dbPost.userName = postDetailsEntity.userName
+            let dbPost = DBPostModel(context: self.moc)
+
+            dbPost.title = postEntity.title
+            dbPost.author = postEntity.author
+            dbPost.email = postEntity.email
+            dbPost.website = postEntity.website
+            dbPost.street = postEntity.street
+            dbPost.city = postEntity.city
+            dbPost.companyName = postEntity.companyName
 
             do { try self.moc.save() }
             catch { print("Failed to save data to Core Data: \(error)") }
@@ -42,7 +48,9 @@ class CoreDataController: ObservableObject {
     }
 
     func clearAllData() {
-        let entityName = "DBPostDetailsModel"
+        //Important! Rename this also if renaming CoreData entity name
+        let entityName = "DBPostModel"
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 

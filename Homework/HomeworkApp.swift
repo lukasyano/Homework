@@ -8,16 +8,16 @@ struct HomeworkApp: App {
     var body: some Scene {
         WindowGroup {
             let postRepository = PostRepository(api: apiService)
-            let userRepository = UserRepository(api: apiService)
+//            let userRepository = UserRepository(api: apiService)
             let postsViewModel = PostsViewModel(
                 postRepository: postRepository,
-                userRepository: userRepository,
+//                userRepository: userRepository,
                 coreDataController: coreDataController
             )
 
             MainScreen()
                 .environmentObject(postRepository)
-                .environmentObject(userRepository)
+//                .environmentObject(userRepository)
                 .environmentObject(postsViewModel)
                 .environment(\.managedObjectContext, coreDataController.container.viewContext)
         }

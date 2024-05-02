@@ -1,22 +1,29 @@
+import Alamofire
+import Combine
 import SwiftUI
 
 class PostRepository: ObservableObject {
-    private let api: ApiService 
-    
+    private let api: ApiService
+
     init(api: ApiService) {
         self.api = api
     }
 
-    func getPosts(completion: @escaping ([PostEntity]?, Error?) -> Void) {
-        api.fetchPosts { apiPostResponse in
+    func getPosts() -> AnyPublisher<[PostEntity], Error> {
+        api.fetchPosts()
+            .flatMap { posts in
 
-            switch apiPostResponse.result {
-            case .success(let data):
-                let listPostsEntity = Mapper.mapPostsFromApi(posts: data)
-                completion(listPostsEntity, nil)
-            case .failure(let error):
-                completion(nil, error)
+                let postDetailsPublishers = posts.map { post in
+                    self.api.fetchUserData(userId: post.userId)
+
+                        .map { userData in
+                            Mapper.mapFromApi(post: post, user: userData)
+                        }
+                        .eraseToAnyPublisher()
+                }
+
+                return Publishers.MergeMany(postDetailsPublishers).collect().eraseToAnyPublisher()
             }
-        }
+            .eraseToAnyPublisher()
     }
 }

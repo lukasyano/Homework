@@ -1,18 +1,32 @@
 import Alamofire
+import Combine
 import Foundation
 
-class ApiService: ObservableObject {
+protocol ApiServiceProtocol {
+    func fetchPosts() -> AnyPublisher<[ApiPostModel], Error>
+    func fetchUserData(userId: Int) -> AnyPublisher<ApiUserModel, Error>
+}
+
+class ApiService: ApiServiceProtocol {
     let baseUrl = "https://jsonplaceholder.typicode.com"
 
-    func fetchPosts(completion: @escaping (AFDataResponse<[ApiPostModel]>) -> Void) {
-        let postsUrL = "\(baseUrl)/posts"
+    func fetchPosts() -> AnyPublisher<[ApiPostModel], Error> {
+        let postsUrl = "\(baseUrl)/posts"
 
-        AF.request(postsUrL).responseDecodable(of: [ApiPostModel].self) { completion($0) }
+        return AF.request(postsUrl)
+            .publishDecodable(type: [ApiPostModel].self)
+            .value()
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
     }
 
-    func fetchUserData(userId: Int, completion: @escaping (AFDataResponse<ApiUserModel>) -> Void) {
+    func fetchUserData(userId: Int) -> AnyPublisher<ApiUserModel, Error> {
         let userDataUrl = "\(baseUrl)/users/\(userId)"
 
-        AF.request(userDataUrl).responseDecodable(of: ApiUserModel.self) { completion($0) }
+        return AF.request(userDataUrl)
+            .publishDecodable(type: ApiUserModel.self)
+            .value()
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
     }
 }

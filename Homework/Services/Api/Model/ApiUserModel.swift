@@ -1,9 +1,18 @@
 struct ApiUserModel: Decodable {
-    let id: Int
-    let name: String
-
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case name
-    }
+    let id: Int?
+    let name: String?
+    let email: String?
+    let address: Address?
+    let website: String?
+    let company: Company?
 }
+
+struct Address: Decodable {
+    let street: String?
+    let city: String?
+}
+
+struct Company: Decodable{
+    let name: String?
+}
+
