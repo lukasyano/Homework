@@ -1,3 +1,4 @@
+import Combine
 import CoreData
 import Foundation
 
@@ -22,22 +23,23 @@ class CoreDataController: ObservableObject {
         }
     }
 
-    func fetchFromDB(completion: @escaping ([DBPostModel]) -> Void) {
-        let fetchRequest = DBPostModel.fetchRequest()
-        do {
-            let dbPosts = try moc.fetch(fetchRequest)
-            completion(dbPosts)
-        } catch {
-            print("Failed to fetch posts: \(error)")
-            completion([])
-        }
-    }
+    func fetchFromDB() -> AnyPublisher<[DBPostModel], Error> {
+          let fetchRequest = DBPostModel.fetchRequest()
+          return Future<[DBPostModel], Error> { promise in
+              do {
+                  let dbPosts = try self.moc.fetch(fetchRequest)
+                  promise(.success(dbPosts))
+              } catch {
+                  promise(.failure(error))
+              }
+          }.eraseToAnyPublisher()
+      }
 
-    func saveToCoreData(_ postEntity: PostEntity) {
 
-            moc.perform {
+    func saveToCoreData(_ postEntity: PostEntity) -> AnyPublisher<Void, Error> {
+        return Future<Void, Error> { promise in
+            self.moc.perform {
                 let dbPost = DBPostModel(context: self.moc)
-        
                 dbPost.title = postEntity.title
                 dbPost.author = postEntity.author
                 dbPost.email = postEntity.email
@@ -46,21 +48,28 @@ class CoreDataController: ObservableObject {
                 dbPost.city = postEntity.city
                 dbPost.companyName = postEntity.companyName
 
-                do { try self.moc.save() }
-                catch { print("Failed to save data to Core Data: \(error)") }
+                do {
+                    try self.moc.save()
+                    promise(.success(()))
+                } catch {
+                    promise(.failure(error))
+                }
             }
-        }
-    
+        }.eraseToAnyPublisher()
+    }
 
-    func clearAllData() {
+    func clearAllData() -> AnyPublisher<Void, Error> {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
-        do {
-            try moc.execute(batchDeleteRequest)
-            try moc.save()
-        } catch {
-            print("Failed to clear data from Core Data: \(error)")
-        }
+        return Future<Void, Error> { promise in
+            do {
+                try self.moc.execute(batchDeleteRequest)
+                try self.moc.save()
+                promise(.success(()))
+            } catch {
+                promise(.failure(error))
+            }
+        }.eraseToAnyPublisher()
     }
 }

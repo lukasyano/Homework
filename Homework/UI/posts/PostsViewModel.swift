@@ -5,6 +5,7 @@ class PostsViewModel: ObservableObject {
     private let postRepository: PostRepository
 
     @Published var posts = [PostEntity]()
+    @Published var uiError: String = ""
 
     private var cancellables = Set<AnyCancellable>()
 
@@ -24,34 +25,41 @@ class PostsViewModel: ObservableObject {
     }
 
     func fetchPostsFromDb() {
-        postRepository.fetchPostsFromDb { [weak self] dbPosts in
-            if dbPosts.isEmpty {
-                self?.updateDb()
-            }
-            else {
-                self?.posts = Mapper.mapFromDB(dbModel: dbPosts)
-            }
-        }
-    }
-
-    func updateDb() {
-        postRepository.getPosts()
+        postRepository.fetchPostsFromDb()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
-                case .finished:
-                    print("Finished fetching posts.")
+                case .finished: break
                 case .failure(let error):
-                    print("Error fetching posts: \(error)")
+                    print("Error fetching posts from DB: \(error)")
                 }
-            }, receiveValue: { posts in
-                self.postRepository.saveToCoreData(posts)
+            }, receiveValue: { dbPosts in
+                self.posts = Mapper.mapFromDB(dbModel: dbPosts)
             })
             .store(in: &cancellables)
     }
-    
-    func refreshDb(){
-        postRepository.clearAllData()
+
+    func refreshDb() {
+        postRepository.getPosts()
+            .flatMap { [weak self] posts -> AnyPublisher<Void, Error> in
+                guard let self = self else { return Empty().eraseToAnyPublisher() }
+
+                return self.postRepository.clearAllData()
+                    .flatMap { _ in
+                        self.postRepository.saveToCoreData(posts)
+                    }.eraseToAnyPublisher()
+            }
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished: break
+                case .failure(let error):
+                    self.uiError = error.localizedDescription
+                }
+            }, receiveValue: { _ in })
+            .store(in: &cancellables)
     }
 
+//    func refreshDb(){
+//        postRepository.clearAllData()
+//    }
 }

@@ -11,36 +11,32 @@ class PostRepository: ObservableObject {
     }
 
     func getPosts() -> AnyPublisher<[PostEntity], Error> {
-        api.fetchPosts()
-            .flatMap { posts in
-
+        return api.fetchPosts()
+            .flatMap { posts -> AnyPublisher<[PostEntity], Error> in
                 let postDetailsPublishers = posts.map { post in
                     self.api.fetchUserData(userId: post.userId)
-
                         .map { userData in
                             Mapper.mapFromApi(post: post, user: userData)
                         }
                         .eraseToAnyPublisher()
                 }
-
                 return Publishers.MergeMany(postDetailsPublishers).collect().eraseToAnyPublisher()
             }
             .eraseToAnyPublisher()
     }
 
-    func fetchPostsFromDb(completion: @escaping ([DBPostModel]) -> Void) {
-        dataController.fetchFromDB { posts in
-            completion(posts)
-        }
+    func fetchPostsFromDb() -> AnyPublisher<[DBPostModel], Error> {
+        return dataController.fetchFromDB()
     }
 
-    func saveToCoreData(_ posts: [PostEntity]) {        
-        for post in posts {
-            dataController.saveToCoreData(post)
-        }
+    func saveToCoreData(_ posts: [PostEntity]) -> AnyPublisher<Void, Error> {
+        return Publishers.MergeMany(posts.map { dataController.saveToCoreData($0) })
+            .collect()
+            .map { _ in }
+            .eraseToAnyPublisher()
     }
 
-    func clearAllData() {
-        dataController.clearAllData()
+    func clearAllData() -> AnyPublisher<Void, Error> {
+        return dataController.clearAllData()
     }
 }
