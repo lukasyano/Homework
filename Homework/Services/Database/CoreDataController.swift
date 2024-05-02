@@ -22,7 +22,7 @@ class CoreDataController: ObservableObject {
         }
     }
 
-    func fetchPosts(completion: @escaping ([DBPostModel]) -> Void) {
+    func fetchFromDB(completion: @escaping ([DBPostModel]) -> Void) {
         let fetchRequest = DBPostModel.fetchRequest()
         do {
             let dbPosts = try moc.fetch(fetchRequest)

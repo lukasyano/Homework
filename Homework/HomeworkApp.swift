@@ -2,24 +2,21 @@ import SwiftUI
 
 @main
 struct HomeworkApp: App {
-    @StateObject private var coreDataController = CoreDataController()
+    @StateObject private var dbController = CoreDataController()
     private let apiService = ApiService()
 
     var body: some Scene {
         WindowGroup {
-            let postRepository = PostRepository(api: apiService)
-//            let userRepository = UserRepository(api: apiService)
+            let postRepository = PostRepository(dataController: dbController, api: apiService)
+
             let postsViewModel = PostsViewModel(
-                postRepository: postRepository,
-//                userRepository: userRepository,
-                coreDataController: coreDataController
+                postRepository: postRepository
             )
 
             MainScreen()
                 .environmentObject(postRepository)
-//                .environmentObject(userRepository)
                 .environmentObject(postsViewModel)
-                .environment(\.managedObjectContext, coreDataController.container.viewContext)
+                .environment(\.managedObjectContext, dbController.container.viewContext)
         }
     }
 }

@@ -28,15 +28,10 @@ struct PostsScreenView: View {
             }
             .navigationTitle("Posts")
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button(action: viewModel.clearAllData) {
-                        Text("ClearDB")
-                    }
-                }
 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: viewModel.updateDb) {
-                        Text("UpdateDb")
+                    Button(action: viewModel.refreshDb) {
+                        Text("Refresh")
                     }
                 }
             }

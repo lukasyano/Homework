@@ -1,11 +1,15 @@
-import Alamofire
 import Combine
 import SwiftUI
 
 class PostRepository: ObservableObject {
+    private let dataController: CoreDataController
     private let api: ApiService
 
-    init(api: ApiService) {
+    init(
+        dataController: CoreDataController,
+        api: ApiService)
+    {
+        self.dataController = dataController
         self.api = api
     }
 
@@ -26,4 +30,21 @@ class PostRepository: ObservableObject {
             }
             .eraseToAnyPublisher()
     }
+    
+    func fetchPostsFromDb(completion: @escaping ([DBPostModel]) -> Void) {
+           dataController.fetchFromDB { posts in
+               completion(posts)
+           }
+       }
+
+
+       func saveToCoreData(_ posts: [PostEntity]) {
+           for post in posts {
+               dataController.saveToCoreData(post)
+           }
+       }
+
+       func clearAllData() {
+           dataController.clearAllData()
+       }
 }
