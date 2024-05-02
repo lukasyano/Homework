@@ -5,8 +5,11 @@ class CoreDataController: ObservableObject {
     let container: NSPersistentContainer
     let moc: NSManagedObjectContext
 
+    let containerName = "Homework"
+    let entityName = "DBPostModel"
+
     init() {
-        container = NSPersistentContainer(name: "Homework")
+        container = NSPersistentContainer(name: containerName)
         moc = container.viewContext
         loadPersistentStores()
     }
@@ -48,9 +51,6 @@ class CoreDataController: ObservableObject {
     }
 
     func clearAllData() {
-        //Important! Rename this also if renaming CoreData entity name
-        let entityName = "DBPostModel"
-        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 

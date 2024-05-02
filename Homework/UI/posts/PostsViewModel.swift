@@ -18,13 +18,16 @@ class PostsViewModel: ObservableObject {
     @Published var posts = [PostEntity]()
 
     private func observeDbChanges() {
-        NotificationCenter.default.publisher(for: .NSManagedObjectContextDidSave, object: coreDataController.moc)
+        NotificationCenter.default
+            .publisher(
+                for: .NSManagedObjectContextDidSave,
+                object: coreDataController.moc
+            )
             .sink { [weak self] _ in
                 self?.fetchPostsFromDb()
             }
             .store(in: &cancellables)
     }
-
 
     func fetchPostsFromDb() {
         coreDataController.fetchPosts { dbPosts in
@@ -54,5 +57,4 @@ class PostsViewModel: ObservableObject {
     func clearAllData() {
         coreDataController.clearAllData()
     }
-
 }
