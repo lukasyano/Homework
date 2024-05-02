@@ -34,21 +34,23 @@ class CoreDataController: ObservableObject {
     }
 
     func saveToCoreData(_ postEntity: PostEntity) {
-        moc.perform {
-            let dbPost = DBPostModel(context: self.moc)
 
-            dbPost.title = postEntity.title
-            dbPost.author = postEntity.author
-            dbPost.email = postEntity.email
-            dbPost.website = postEntity.website
-            dbPost.street = postEntity.street
-            dbPost.city = postEntity.city
-            dbPost.companyName = postEntity.companyName
+            moc.perform {
+                let dbPost = DBPostModel(context: self.moc)
+        
+                dbPost.title = postEntity.title
+                dbPost.author = postEntity.author
+                dbPost.email = postEntity.email
+                dbPost.website = postEntity.website
+                dbPost.street = postEntity.street
+                dbPost.city = postEntity.city
+                dbPost.companyName = postEntity.companyName
 
-            do { try self.moc.save() }
-            catch { print("Failed to save data to Core Data: \(error)") }
+                do { try self.moc.save() }
+                catch { print("Failed to save data to Core Data: \(error)") }
+            }
         }
-    }
+    
 
     func clearAllData() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)

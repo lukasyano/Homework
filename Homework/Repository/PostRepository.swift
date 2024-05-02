@@ -5,10 +5,7 @@ class PostRepository: ObservableObject {
     private let dataController: CoreDataController
     private let api: ApiService
 
-    init(
-        dataController: CoreDataController,
-        api: ApiService)
-    {
+    init(dataController: CoreDataController, api: ApiService) {
         self.dataController = dataController
         self.api = api
     }
@@ -30,21 +27,20 @@ class PostRepository: ObservableObject {
             }
             .eraseToAnyPublisher()
     }
-    
+
     func fetchPostsFromDb(completion: @escaping ([DBPostModel]) -> Void) {
-           dataController.fetchFromDB { posts in
-               completion(posts)
-           }
-       }
+        dataController.fetchFromDB { posts in
+            completion(posts)
+        }
+    }
 
+    func saveToCoreData(_ posts: [PostEntity]) {        
+        for post in posts {
+            dataController.saveToCoreData(post)
+        }
+    }
 
-       func saveToCoreData(_ posts: [PostEntity]) {
-           for post in posts {
-               dataController.saveToCoreData(post)
-           }
-       }
-
-       func clearAllData() {
-           dataController.clearAllData()
-       }
+    func clearAllData() {
+        dataController.clearAllData()
+    }
 }

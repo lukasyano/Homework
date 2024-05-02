@@ -30,7 +30,7 @@ struct PostsScreenView: View {
             .toolbar {
 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: viewModel.refreshDb) {
+                    Button(action: viewModel.updateDb) {
                         Text("Refresh")
                     }
                 }

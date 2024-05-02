@@ -44,9 +44,10 @@ class PostsViewModel: ObservableObject {
                 case .failure(let error):
                     print("Error fetching posts: \(error)")
                 }
-            }, receiveValue: { postDetails in
-                self.postRepository.saveToCoreData(postDetails)
-            }).store(in: &cancellables)
+            }, receiveValue: { posts in
+                self.postRepository.saveToCoreData(posts)
+            })
+            .store(in: &cancellables)
     }
     
     func refreshDb(){
