@@ -12,7 +12,6 @@ struct Address: Decodable {
     let city: String?
 }
 
-struct Company: Decodable{
+struct Company: Decodable {
     let name: String?
 }
-

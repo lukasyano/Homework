@@ -16,38 +16,21 @@ class PostsViewModel: ObservableObject {
 
     private func setUpDb() {
         fetchPostsFromDb()
+        refreshDb()
         observeDbChanges()
     }
 
-    private func observeDbChanges() {
-        NotificationCenter.default
-            .publisher(for: .NSManagedObjectContextDidSave)
-            .sink { [weak self] _ in
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-                    self?.fetchPostsFromDb()
-                }
-            }
-            .store(in: &cancellables)
-    }
-
-    func updateUiPosts(dbPosts: [DBPostModel]) {
-        posts = Mapper.mapFromDB(dbModel: dbPosts)
-    }
-
-    func fetchPostsFromDb() {
+    private func fetchPostsFromDb() {
         postRepository.fetchPostsFromDb()
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished: break
-                case .failure(let error):
+                case let .failure(error):
                     self.uiError = error.localizedDescription
                 }
             }, receiveValue: { dbPosts in
-
                 if !dbPosts.isEmpty {
                     self.updateUiPosts(dbPosts: dbPosts)
-                } else {
-                    self.refreshDb()
                 }
             })
             .store(in: &cancellables)
@@ -65,11 +48,26 @@ class PostsViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished: break
-                case .failure(let error):
+                case let .failure(error):
                     self.uiError = error.localizedDescription
                 }
             }, receiveValue: { _ in })
-        
+
             .store(in: &cancellables)
+    }
+
+    private func observeDbChanges() {
+        NotificationCenter.default
+            .publisher(for: .NSManagedObjectContextDidSave)
+            .sink { [weak self] _ in
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                    self?.fetchPostsFromDb()
+                }
+            }
+            .store(in: &cancellables)
+    }
+
+    private func updateUiPosts(dbPosts: [DBPostModel]) {
+        posts = Mapper.mapFromDB(dbModel: dbPosts)
     }
 }
