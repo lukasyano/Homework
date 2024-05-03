@@ -3,51 +3,42 @@ import SwiftUI
 struct PostsScreenView: View {
     @EnvironmentObject var viewModel: PostsViewModel
 
-    @State private var showAlert = false
-    @State private var isRefresing = false
-
     var body: some View {
         NavigationStack {
-            ZStack {
-                VStack {
-                    List(viewModel.posts, id: \.self) { item in
-                        NavigationLink {
-                            Color.black
-                        } label: {
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text(item.title)
-                                HStack {
-                                    Spacer()
-                                    Text(item.author)
-                                }
-                            }
-                        }
+            VStack {
+                List(viewModel.posts, id: \.self) { item in
+                    postItem(item: item)
+                }.overlay {
+                    if viewModel.isLoading {
+                        ProgressView()
                     }
-                    .disabled(isRefresing)
-                    .overlay(isRefresing ? ProgressView() : nil, alignment: .center)
                 }
             }
             .navigationTitle("Posts")
-            .refreshable {
-                viewModel.refresh()
-            }
-            .alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text("Error"),
-                    message: Text(viewModel.uiError),
-                    primaryButton: .default(Text("Retry")) {
-                        viewModel.refresh()
-                    },
-                    secondaryButton: .cancel()
-                )
+            .refreshable { viewModel.refresh() }
+            .alert(isPresented: $viewModel.showErrorAlert) {
+                errorAlert
             }
         }
-        .onReceive(viewModel.$posts, perform: { posts in
-            print(posts.count)
-        })
-        .onReceive(viewModel.$uiError) { error in
-            if !error.isEmpty {
-                showAlert = true
+    }
+
+    private var errorAlert: Alert {
+        Alert(
+            title: Text("Error"),
+            message: Text(viewModel.uiError),
+            primaryButton: .default(Text("Retry")) {
+                viewModel.refresh()
+            },
+            secondaryButton: .cancel()
+        )
+    }
+
+    fileprivate func postItem(item: PostEntity) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(item.title)
+            HStack {
+                Spacer()
+                Text(item.author)
             }
         }
     }

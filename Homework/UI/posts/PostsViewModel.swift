@@ -3,20 +3,22 @@ import SwiftUI
 
 class PostsViewModel: ObservableObject {
     private let postRepository: PostRepository
-    
+
     @Published var posts = [PostEntity]()
     @Published var uiError: String = ""
+    @Published var showErrorAlert: Bool = false
+    @Published var isLoading: Bool = false
 
     private var cancellables = Set<AnyCancellable>()
 
     init(postRepository: PostRepository) {
         self.postRepository = postRepository
-        setUpDb()
+        setUpDatabase()
     }
 
-    private func setUpDb() {
+    private func setUpDatabase() {
         fetchPostsFromDb()
-        getPostsAndUpdateDatabase()
+        getNewPostsAndUpdateDatabase()
         observeDatabaseChanges()
     }
 
@@ -35,11 +37,8 @@ class PostsViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func refresh(){
-        getPostsAndUpdateDatabase()
-    }
-    
-    private func getPostsAndUpdateDatabase() {
+    private func getNewPostsAndUpdateDatabase() {
+        isLoading = true
         postRepository.getPosts()
             .flatMap { [weak self] posts -> AnyPublisher<Void, Error> in
                 guard let self = self else { return Empty().eraseToAnyPublisher() }
@@ -73,10 +72,22 @@ class PostsViewModel: ObservableObject {
 
     private func updateUiPosts(dbPosts: [DBPostModel]) {
         guard !dbPosts.isEmpty else { return }
-        posts = Mapper.mapFromDB(dbModel: dbPosts)
+
+        DispatchQueue.main.async { [weak self] in
+            self?.isLoading = false
+            self?.posts = Mapper.mapFromDB(dbModel: dbPosts)
+        }
     }
 
     private func handleUiError(_ error: Error) {
-        uiError = error.localizedDescription
+        DispatchQueue.main.async { [weak self] in
+            self?.isLoading = false
+            self?.showErrorAlert = true
+            self?.uiError = error.localizedDescription
+        }
+    }
+
+    func refresh() {
+        getNewPostsAndUpdateDatabase()
     }
 }
