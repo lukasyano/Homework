@@ -11,26 +11,31 @@ class PostsViewModel: ObservableObject {
 
     init(postRepository: PostRepository) {
         self.postRepository = postRepository
+        setUpDb()
+    }
+
+    private func setUpDb() {
         fetchPostsFromDb()
         observeDbChanges()
     }
 
-    
     private func observeDbChanges() {
         NotificationCenter.default
             .publisher(for: .NSManagedObjectContextDidSave)
             .sink { [weak self] _ in
-                self?.fetchPostsFromDb()
-//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.2){
-//                    self?.fetchPostsFromDb()
-//                }
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                    self?.fetchPostsFromDb()
+                }
             }
             .store(in: &cancellables)
     }
 
+    func updateUiPosts(dbPosts: [DBPostModel]) {
+        posts = Mapper.mapFromDB(dbModel: dbPosts)
+    }
+
     func fetchPostsFromDb() {
         postRepository.fetchPostsFromDb()
-            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished: break
@@ -38,20 +43,24 @@ class PostsViewModel: ObservableObject {
                     self.uiError = error.localizedDescription
                 }
             }, receiveValue: { dbPosts in
-                self.posts = Mapper.mapFromDB(dbModel: dbPosts)
+
+                if !dbPosts.isEmpty {
+                    self.updateUiPosts(dbPosts: dbPosts)
+                } else {
+                    self.refreshDb()
+                }
             })
             .store(in: &cancellables)
     }
 
     func refreshDb() {
         postRepository.getPosts()
+            .receive(on: DispatchQueue.main)
             .flatMap { [weak self] posts -> AnyPublisher<Void, Error> in
                 guard let self = self else { return Empty().eraseToAnyPublisher() }
 
-                return postRepository.clearAllData()
-                    .flatMap { _ in
-                        self.postRepository.saveToCoreData(posts)
-                    }.eraseToAnyPublisher()
+                return postRepository.updateDB(with: posts)
+                    .eraseToAnyPublisher()
             }
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -60,6 +69,7 @@ class PostsViewModel: ObservableObject {
                     self.uiError = error.localizedDescription
                 }
             }, receiveValue: { _ in })
+        
             .store(in: &cancellables)
     }
 }

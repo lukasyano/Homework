@@ -29,14 +29,7 @@ class PostRepository: ObservableObject {
         return dataController.fetchFromDB()
     }
 
-    func saveToCoreData(_ posts: [PostEntity]) -> AnyPublisher<Void, Error> {
-        return Publishers.MergeMany(dataController.saveToCoreData(posts))
-            .collect()
-            .map { _ in }
-            .eraseToAnyPublisher()
-    }
-
-    func clearAllData() -> AnyPublisher<Void, Error> {
-        return dataController.clearAllData()
+    func updateDB(with posts: [PostEntity]) -> AnyPublisher<Void, Error> {
+        return dataController.updateDB(with: posts)
     }
 }
