@@ -1,8 +1,7 @@
 import Combine
 import CoreData
-import Foundation
 
-class CoreDataController: ObservableObject {
+class CoreDataController: ObservableObject, DataControllerProtocol {
     let container: NSPersistentContainer
     let moc: NSManagedObjectContext
 

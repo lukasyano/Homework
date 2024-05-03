@@ -29,14 +29,14 @@ struct PostsScreenView: View {
             }
             .navigationTitle("Posts")
             .refreshable {
-                viewModel.refreshDb()
+                viewModel.refresh()
             }
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Error"),
                     message: Text(viewModel.uiError),
                     primaryButton: .default(Text("Retry")) {
-                        viewModel.refreshDb()
+                        viewModel.refresh()
                     },
                     secondaryButton: .cancel()
                 )

@@ -8,15 +8,11 @@ struct HomeworkApp: App {
     var body: some Scene {
         WindowGroup {
             let postRepository = PostRepository(dataController: dbController, api: apiService)
-
-            let postsViewModel = PostsViewModel(
-                postRepository: postRepository
-            )
+            let postsViewModel = PostsViewModel(postRepository: postRepository)
 
             MainScreen()
                 .environmentObject(postRepository)
                 .environmentObject(postsViewModel)
-                .environment(\.managedObjectContext, dbController.container.viewContext)
         }
     }
 }

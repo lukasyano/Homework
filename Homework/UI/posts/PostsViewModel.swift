@@ -3,7 +3,7 @@ import SwiftUI
 
 class PostsViewModel: ObservableObject {
     private let postRepository: PostRepository
-
+    
     @Published var posts = [PostEntity]()
     @Published var uiError: String = ""
 
@@ -16,58 +16,67 @@ class PostsViewModel: ObservableObject {
 
     private func setUpDb() {
         fetchPostsFromDb()
-        refreshDb()
-        observeDbChanges()
+        getPostsAndUpdateDatabase()
+        observeDatabaseChanges()
     }
 
     private func fetchPostsFromDb() {
         postRepository.fetchPostsFromDb()
-            .sink(receiveCompletion: { completion in
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished: break
                 case let .failure(error):
-                    self.uiError = error.localizedDescription
+                    self?.handleUiError(error)
                 }
-            }, receiveValue: { dbPosts in
-                if !dbPosts.isEmpty {
-                    self.updateUiPosts(dbPosts: dbPosts)
-                }
+            }, receiveValue: { [weak self] dbPosts in
+                self?.updateUiPosts(dbPosts: dbPosts)
             })
             .store(in: &cancellables)
     }
 
-    func refreshDb() {
+    func refresh(){
+        getPostsAndUpdateDatabase()
+    }
+    
+    private func getPostsAndUpdateDatabase() {
         postRepository.getPosts()
-            .receive(on: DispatchQueue.main)
             .flatMap { [weak self] posts -> AnyPublisher<Void, Error> in
                 guard let self = self else { return Empty().eraseToAnyPublisher() }
 
-                return postRepository.updateDB(with: posts)
-                    .eraseToAnyPublisher()
+                return self.updateDatabase(with: posts)
             }
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
                 case .finished: break
                 case let .failure(error):
-                    self.uiError = error.localizedDescription
+                    self?.handleUiError(error)
                 }
             }, receiveValue: { _ in })
-
             .store(in: &cancellables)
     }
 
-    private func observeDbChanges() {
+    private func updateDatabase(with posts: [PostEntity]) -> AnyPublisher<Void, Error> {
+        postRepository.updateDB(with: posts)
+            .eraseToAnyPublisher()
+    }
+
+    private func observeDatabaseChanges() {
         NotificationCenter.default
             .publisher(for: .NSManagedObjectContextDidSave)
+            .debounce(for: .milliseconds(600), scheduler: DispatchQueue.main)
             .sink { [weak self] _ in
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
-                    self?.fetchPostsFromDb()
-                }
+                self?.fetchPostsFromDb()
             }
             .store(in: &cancellables)
     }
 
     private func updateUiPosts(dbPosts: [DBPostModel]) {
+        guard !dbPosts.isEmpty else { return }
         posts = Mapper.mapFromDB(dbModel: dbPosts)
+    }
+
+    private func handleUiError(_ error: Error) {
+        uiError = error.localizedDescription
     }
 }
