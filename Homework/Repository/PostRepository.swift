@@ -30,7 +30,7 @@ class PostRepository: ObservableObject {
     }
 
     func saveToCoreData(_ posts: [PostEntity]) -> AnyPublisher<Void, Error> {
-        return Publishers.MergeMany(posts.map { dataController.saveToCoreData($0) })
+        return Publishers.MergeMany(dataController.saveToCoreData(posts))
             .collect()
             .map { _ in }
             .eraseToAnyPublisher()

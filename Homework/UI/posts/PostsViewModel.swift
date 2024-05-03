@@ -15,11 +15,15 @@ class PostsViewModel: ObservableObject {
         observeDbChanges()
     }
 
+    
     private func observeDbChanges() {
         NotificationCenter.default
             .publisher(for: .NSManagedObjectContextDidSave)
             .sink { [weak self] _ in
                 self?.fetchPostsFromDb()
+//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.2){
+//                    self?.fetchPostsFromDb()
+//                }
             }
             .store(in: &cancellables)
     }
@@ -31,7 +35,7 @@ class PostsViewModel: ObservableObject {
                 switch completion {
                 case .finished: break
                 case .failure(let error):
-                    print("Error fetching posts from DB: \(error)")
+                    self.uiError = error.localizedDescription
                 }
             }, receiveValue: { dbPosts in
                 self.posts = Mapper.mapFromDB(dbModel: dbPosts)
@@ -44,7 +48,7 @@ class PostsViewModel: ObservableObject {
             .flatMap { [weak self] posts -> AnyPublisher<Void, Error> in
                 guard let self = self else { return Empty().eraseToAnyPublisher() }
 
-                return self.postRepository.clearAllData()
+                return postRepository.clearAllData()
                     .flatMap { _ in
                         self.postRepository.saveToCoreData(posts)
                     }.eraseToAnyPublisher()
@@ -58,8 +62,4 @@ class PostsViewModel: ObservableObject {
             }, receiveValue: { _ in })
             .store(in: &cancellables)
     }
-
-//    func refreshDb(){
-//        postRepository.clearAllData()
-//    }
 }

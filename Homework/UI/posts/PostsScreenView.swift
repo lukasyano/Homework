@@ -42,6 +42,9 @@ struct PostsScreenView: View {
                 )
             }
         }
+        .onReceive(viewModel.$posts, perform: { posts in
+            print(posts.count)
+        })
         .onReceive(viewModel.$uiError) { error in
             if !error.isEmpty {
                 showAlert = true

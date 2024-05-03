@@ -1,32 +1,30 @@
-import Alamofire
 import Combine
 import Foundation
-
-protocol ApiServiceProtocol {
-    func fetchPosts() -> AnyPublisher<[ApiPostModel], Error>
-    func fetchUserData(userId: Int) -> AnyPublisher<ApiUserModel, Error>
-}
 
 class ApiService: ApiServiceProtocol {
     let baseUrl = "https://jsonplaceholder.typicode.com"
 
     func fetchPosts() -> AnyPublisher<[ApiPostModel], Error> {
-        let postsUrl = "\(baseUrl)/posts"
+        guard let postsUrl = URL(string: "\(baseUrl)/posts") else {
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+        }
 
-        return AF.request(postsUrl)
-            .publishDecodable(type: [ApiPostModel].self)
-            .value()
+        return URLSession.shared.dataTaskPublisher(for: postsUrl)
             .mapError { $0 as Error }
+            .map { $0.data }
+            .decode(type: [ApiPostModel].self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
 
     func fetchUserData(userId: Int) -> AnyPublisher<ApiUserModel, Error> {
-        let userDataUrl = "\(baseUrl)/users/\(userId)"
+        guard let userDataUrl = URL(string: "\(baseUrl)/users/\(userId)") else {
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+        }
 
-        return AF.request(userDataUrl)
-            .publishDecodable(type: ApiUserModel.self)
-            .value()
+        return URLSession.shared.dataTaskPublisher(for: userDataUrl)
             .mapError { $0 as Error }
+            .map { $0.data }
+            .decode(type: ApiUserModel.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
 }
