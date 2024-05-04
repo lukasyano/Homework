@@ -2,7 +2,6 @@ import Combine
 import SwiftUI
 
 class PostsViewModel: ObservableObject {
-    
     private let repository: PostRepositoryProtocol
 
     @Published var posts = [PostEntity]()
