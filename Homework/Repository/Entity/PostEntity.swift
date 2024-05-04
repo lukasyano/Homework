@@ -1,6 +1,7 @@
 import Foundation
 
-struct PostEntity: Hashable {
+struct PostEntity: Identifiable {
+    let id : UUID
     let title: String
     let author: String
     let email: String

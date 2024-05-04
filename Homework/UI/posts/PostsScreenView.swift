@@ -5,28 +5,30 @@ struct PostsScreenView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                List(viewModel.posts, id: \.self) { item in
-                    postItem(item: item)
-                }.overlay {
-                    if viewModel.isLoading {
-                        ProgressView()
+            List(viewModel.posts) { postItem(item: $0) }
+                .navigationTitle(String.postNavigationTitle)
+                .refreshable { viewModel.refresh() }
+                .alert(isPresented: $viewModel.showErrorAlert) { errorAlert }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        if viewModel.isLoading { progressView }
                     }
                 }
-            }
-            .navigationTitle("Posts")
-            .refreshable { viewModel.refresh() }
-            .alert(isPresented: $viewModel.showErrorAlert) {
-                errorAlert
-            }
         }
     }
 
-    private var errorAlert: Alert {
+    fileprivate var progressView: some View {
+        HStack(spacing: 8) {
+            ProgressView()
+            Text(String.loading)
+        }
+    }
+
+    fileprivate var errorAlert: Alert {
         Alert(
-            title: Text("Error"),
+            title: Text(String.error),
             message: Text(viewModel.uiError),
-            primaryButton: .default(Text("Retry")) {
+            primaryButton: .default(Text(String.retry)) {
                 viewModel.refresh()
             },
             secondaryButton: .cancel()
@@ -36,8 +38,7 @@ struct PostsScreenView: View {
     fileprivate func postItem(item: PostEntity) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(item.title)
-            HStack {
-                Spacer()
+            HStack(alignment: .bottom) {
                 Text(item.author)
             }
         }

@@ -28,6 +28,7 @@
 		12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643152BE101CC00B2C454 /* MainScreen.swift */; };
 		12C643182BE1314400B2C454 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643172BE1314400B2C454 /* Mapper.swift */; };
 		12D003C32BE21FE9000A5DE6 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D003C22BE21FE9000A5DE6 /* PostEntity.swift */; };
+		12E02CEE2BE6322400C076E9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02CED2BE6322400C076E9 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		12C643152BE101CC00B2C454 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		12C643172BE1314400B2C454 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		12D003C22BE21FE9000A5DE6 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
+		12E02CED2BE6322400C076E9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		128710A12BDD1A5500A44B4C /* Homework */ = {
 			isa = PBXGroup;
 			children = (
+				12E02CEC2BE631FC00C076E9 /* Extensions */,
 				12C643042BE0E2FC00B2C454 /* Repository */,
 				12C643032BE0E2D500B2C454 /* Services */,
 				12C643022BE0E29100B2C454 /* UI */,
@@ -247,6 +250,14 @@
 				12C643172BE1314400B2C454 /* Mapper.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		12E02CEC2BE631FC00C076E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				12E02CED2BE6322400C076E9 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +408,7 @@
 				12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */,
 				128710D32BDD24C800A44B4C /* ApiService.swift in Sources */,
 				128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */,
+				12E02CEE2BE6322400C076E9 /* String.swift in Sources */,
 				129655F12BE4DB5900A36E79 /* PostDaoProtocol.swift in Sources */,
 				12AE0C8A2BE60C2900E2DACF /* PostRepositoryProtocol.swift in Sources */,
 			);
