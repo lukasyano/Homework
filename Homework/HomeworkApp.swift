@@ -1,15 +1,15 @@
+import Combine
 import SwiftUI
 
 @main
 struct HomeworkApp: App {
-    @StateObject private var dbController = PostDao()
-    private let apiService = ApiService()
+    private var postDao: PostDaoProtocol = PostDao()
+    private let api: ApiServiceProtocol = ApiService()
 
     var body: some Scene {
+        let postRepository = PostRepository(postDao: postDao, api: api)
+        let postsViewModel = PostsViewModel(postRepository: postRepository)
         WindowGroup {
-            let postRepository = PostRepository(dataController: dbController, api: apiService)
-            let postsViewModel = PostsViewModel(postRepository: postRepository)
-
             MainScreen()
                 .environmentObject(postRepository)
                 .environmentObject(postsViewModel)

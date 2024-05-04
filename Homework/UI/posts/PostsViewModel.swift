@@ -3,7 +3,7 @@ import SwiftUI
 
 class PostsViewModel: ObservableObject {
     
-    private let repository: PostRepository
+    private let repository: PostRepositoryProtocol
 
     @Published var posts = [PostEntity]()
     @Published var uiError: String = ""
@@ -12,7 +12,7 @@ class PostsViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(postRepository: PostRepository) {
+    init(postRepository: PostRepositoryProtocol) {
         self.repository = postRepository
         setUpDatabase()
     }

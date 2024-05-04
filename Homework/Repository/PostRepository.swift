@@ -1,11 +1,11 @@
 import Combine
 
 class PostRepository: PostRepositoryProtocol, ObservableObject {
-    private let dao: PostDao
-    private let api: ApiService
+    private let dao: PostDaoProtocol
+    private let api: ApiServiceProtocol
 
-    init(dataController: PostDao, api: ApiService) {
-        self.dao = dataController
+    init(postDao: PostDaoProtocol, api: ApiServiceProtocol) {
+        self.dao = postDao
         self.api = api
     }
 
