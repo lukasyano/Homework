@@ -1,7 +1,7 @@
 import Foundation
 
 struct PostEntity: Identifiable {
-    let id : UUID
+    let id: UUID
     let title: String
     let author: String
     let email: String
