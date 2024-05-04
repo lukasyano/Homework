@@ -1,16 +1,15 @@
 import Combine
-import SwiftUI
 
-class PostRepository: ObservableObject {
-    private let dataController: CoreDataController
+class PostRepository: PostRepositoryProtocol, ObservableObject {
+    private let dao: PostDao
     private let api: ApiService
 
-    init(dataController: CoreDataController, api: ApiService) {
-        self.dataController = dataController
+    init(dataController: PostDao, api: ApiService) {
+        self.dao = dataController
         self.api = api
     }
 
-    func getPosts() -> AnyPublisher<[PostEntity], Error> {
+    func getPostsFromApi() -> AnyPublisher<[PostEntity], Error> {
         return api.fetchPosts()
             .flatMap { posts -> AnyPublisher<[PostEntity], Error> in
                 let postDetailsPublishers = posts.map { post in
@@ -25,11 +24,11 @@ class PostRepository: ObservableObject {
             .eraseToAnyPublisher()
     }
 
-    func fetchPostsFromDb() -> AnyPublisher<[DBPostModel], Error> {
-        return dataController.fetchFromDB()
+    func getPostsFromDatabase() -> AnyPublisher<[DBPostModel], Error> {
+        return dao.fetch()
     }
 
-    func updateDB(with posts: [PostEntity]) -> AnyPublisher<Void, Error> {
-        return dataController.updateDB(with: posts)
+    func updateDatabase(with posts: [PostEntity]) -> AnyPublisher<Void, Error> {
+        return dao.update(with: posts)
     }
 }

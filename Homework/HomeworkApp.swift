@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct HomeworkApp: App {
-    @StateObject private var dbController = CoreDataController()
+    @StateObject private var dbController = PostDao()
     private let apiService = ApiService()
 
     var body: some Scene {

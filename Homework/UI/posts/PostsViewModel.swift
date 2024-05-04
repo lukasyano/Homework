@@ -2,7 +2,8 @@ import Combine
 import SwiftUI
 
 class PostsViewModel: ObservableObject {
-    private let postRepository: PostRepository
+    
+    private let repository: PostRepository
 
     @Published var posts = [PostEntity]()
     @Published var uiError: String = ""
@@ -12,7 +13,7 @@ class PostsViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
 
     init(postRepository: PostRepository) {
-        self.postRepository = postRepository
+        self.repository = postRepository
         setUpDatabase()
     }
 
@@ -23,7 +24,7 @@ class PostsViewModel: ObservableObject {
     }
 
     private func fetchPostsFromDb() {
-        postRepository.fetchPostsFromDb()
+        repository.getPostsFromDatabase()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
@@ -39,7 +40,7 @@ class PostsViewModel: ObservableObject {
 
     private func getNewPostsAndUpdateDatabase() {
         isLoading = true
-        postRepository.getPosts()
+        repository.getPostsFromApi()
             .flatMap { [weak self] posts -> AnyPublisher<Void, Error> in
                 guard let self = self else { return Empty().eraseToAnyPublisher() }
 
@@ -56,7 +57,7 @@ class PostsViewModel: ObservableObject {
     }
 
     private func updateDatabase(with posts: [PostEntity]) -> AnyPublisher<Void, Error> {
-        postRepository.updateDB(with: posts)
+        repository.updateDatabase(with: posts)
             .eraseToAnyPublisher()
     }
 

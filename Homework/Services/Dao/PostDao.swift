@@ -1,7 +1,7 @@
 import Combine
 import CoreData
 
-class CoreDataController: ObservableObject, DataControllerProtocol {
+class PostDao: ObservableObject, PostDaoProtocol {
     let container: NSPersistentContainer
     let moc: NSManagedObjectContext
 
@@ -22,7 +22,7 @@ class CoreDataController: ObservableObject, DataControllerProtocol {
         }
     }
 
-    func fetchFromDB() -> AnyPublisher<[DBPostModel], Error> {
+    func fetch() -> AnyPublisher<[DBPostModel], Error> {
         let fetchRequest = DBPostModel.fetchRequest()
         return Future<[DBPostModel], Error> { promise in
             do {
@@ -34,7 +34,7 @@ class CoreDataController: ObservableObject, DataControllerProtocol {
         }.eraseToAnyPublisher()
     }
 
-    func updateDB(with postEntities: [PostEntity]) -> AnyPublisher<Void, Error> {
+    func update(with postEntities: [PostEntity]) -> AnyPublisher<Void, Error> {
         return Future<Void, Error> { promise in
             self.moc.perform {
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: self.entityName)
@@ -45,13 +45,7 @@ class CoreDataController: ObservableObject, DataControllerProtocol {
 
                     postEntities.forEach { postEntity in
                         let dbPost = DBPostModel(context: self.moc)
-                        dbPost.title = postEntity.title
-                        dbPost.author = postEntity.author
-                        dbPost.email = postEntity.email
-                        dbPost.website = postEntity.website
-                        dbPost.street = postEntity.street
-                        dbPost.city = postEntity.city
-                        dbPost.companyName = postEntity.companyName
+                        dbPost.populate(from: postEntity)
                     }
 
                     try self.moc.save()
