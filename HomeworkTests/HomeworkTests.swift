@@ -2,11 +2,10 @@
 //  HomeworkTests.swift
 //  HomeworkTests
 //
-//  Created by Lukas Toliusis on 27/04/2024.
+//  Created by Lukas Toliusis on 04/05/2024.
 //
 
 import XCTest
-@testable import Homework
 
 final class HomeworkTests: XCTestCase {
 
@@ -28,7 +27,7 @@ final class HomeworkTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

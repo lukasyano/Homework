@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "2D17EBF8-511D-458C-8E05-9631CE59EFB0",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Homework.xcodeproj",
+      "identifier" : "1287109E2BDD1A5500A44B4C",
+      "name" : "Homework"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Homework.xcodeproj",
+        "identifier" : "12E02CF42BE6369100C076E9",
+        "name" : "HomeworkTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Homework.xcodeproj",
+        "identifier" : "128710B82BDD1A5600A44B4C",
+        "name" : "HomeworkUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

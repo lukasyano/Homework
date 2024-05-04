@@ -7,32 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12041D872BE4BD2A009997E6 /* ApiServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12041D862BE4BD2A009997E6 /* ApiServiceProtocol.swift */; };
+		1218014C2BE6097600373FC8 /* DbPostModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1218014B2BE6097600373FC8 /* DbPostModelExtension.swift */; };
 		128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A22BDD1A5500A44B4C /* HomeworkApp.swift */; };
-		128710A52BDD1A5500A44B4C /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A42BDD1A5500A44B4C /* MainScreen.swift */; };
+		128710A52BDD1A5500A44B4C /* PostsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A42BDD1A5500A44B4C /* PostsScreenView.swift */; };
 		128710A72BDD1A5600A44B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128710A62BDD1A5600A44B4C /* Assets.xcassets */; };
 		128710AA2BDD1A5600A44B4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128710A92BDD1A5600A44B4C /* Preview Assets.xcassets */; };
-		128710B42BDD1A5600A44B4C /* HomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710B32BDD1A5600A44B4C /* HomeworkTests.swift */; };
 		128710BE2BDD1A5600A44B4C /* HomeworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710BD2BDD1A5600A44B4C /* HomeworkUITests.swift */; };
 		128710C02BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710BF2BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift */; };
-		128710CD2BDD1D8400A44B4C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CC2BDD1D8400A44B4C /* Post.swift */; };
-		128710D02BDD1DBF00A44B4C /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CF2BDD1DBF00A44B4C /* Company.swift */; };
-		128710D32BDD24C800A44B4C /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710D22BDD24C800A44B4C /* WebService.swift */; };
-		128710E52BDD4B2A00A44B4C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 128710E42BDD4B2A00A44B4C /* Alamofire */; };
-		128710E72BDD4B2A00A44B4C /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 128710E62BDD4B2A00A44B4C /* AlamofireDynamic */; };
-		128710EA2BDE321700A44B4C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* User.swift */; };
-		128710EC2BDE322D00A44B4C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710EB2BDE322D00A44B4C /* Address.swift */; };
-		128710EE2BDE324E00A44B4C /* Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710ED2BDE324E00A44B4C /* Geo.swift */; };
+		128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */; };
+		128710D32BDD24C800A44B4C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710D22BDD24C800A44B4C /* ApiService.swift */; };
+		128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* ApiUserModel.swift */; };
+		129655F12BE4DB5900A36E79 /* PostDaoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */; };
+		12AE0C8A2BE60C2900E2DACF /* PostRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */; };
+		12C643092BE0E4FF00B2C454 /* PostDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643082BE0E4FF00B2C454 /* PostDao.swift */; };
+		12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430A2BE0EC4200B2C454 /* Homework.xcdatamodeld */; };
+		12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430D2BE0F5D000B2C454 /* PostRepository.swift */; };
+		12C643122BE100B100B2C454 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643112BE100B100B2C454 /* PostsViewModel.swift */; };
+		12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643152BE101CC00B2C454 /* MainScreen.swift */; };
+		12C643182BE1314400B2C454 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643172BE1314400B2C454 /* Mapper.swift */; };
+		12D003C32BE21FE9000A5DE6 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D003C22BE21FE9000A5DE6 /* PostEntity.swift */; };
+		12E02CEE2BE6322400C076E9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02CED2BE6322400C076E9 /* String.swift */; };
+		12E02CF82BE6369100C076E9 /* HomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02CF72BE6369100C076E9 /* HomeworkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		128710B02BDD1A5600A44B4C /* PBXContainerItemProxy */ = {
+		128710BA2BDD1A5600A44B4C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 128710972BDD1A5500A44B4C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1287109E2BDD1A5500A44B4C;
 			remoteInfo = Homework;
 		};
-		128710BA2BDD1A5600A44B4C /* PBXContainerItemProxy */ = {
+		12E02CF92BE6369100C076E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 128710972BDD1A5500A44B4C /* Project object */;
 			proxyType = 1;
@@ -42,35 +49,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12041D862BE4BD2A009997E6 /* ApiServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceProtocol.swift; sourceTree = "<group>"; };
+		1218014B2BE6097600373FC8 /* DbPostModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbPostModelExtension.swift; sourceTree = "<group>"; };
 		1287109F2BDD1A5500A44B4C /* Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128710A22BDD1A5500A44B4C /* HomeworkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkApp.swift; sourceTree = "<group>"; };
-		128710A42BDD1A5500A44B4C /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		128710A42BDD1A5500A44B4C /* PostsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsScreenView.swift; sourceTree = "<group>"; };
 		128710A62BDD1A5600A44B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128710A92BDD1A5600A44B4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		128710AF2BDD1A5600A44B4C /* HomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		128710B32BDD1A5600A44B4C /* HomeworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTests.swift; sourceTree = "<group>"; };
 		128710B92BDD1A5600A44B4C /* HomeworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		128710BD2BDD1A5600A44B4C /* HomeworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkUITests.swift; sourceTree = "<group>"; };
 		128710BF2BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		128710CC2BDD1D8400A44B4C /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		128710CF2BDD1DBF00A44B4C /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
-		128710D22BDD24C800A44B4C /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
-		128710E92BDE321700A44B4C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		128710EB2BDE322D00A44B4C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		128710ED2BDE324E00A44B4C /* Geo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo.swift; sourceTree = "<group>"; };
+		128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPostModel.swift; sourceTree = "<group>"; };
+		128710D22BDD24C800A44B4C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		128710E92BDE321700A44B4C /* ApiUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUserModel.swift; sourceTree = "<group>"; };
+		129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDaoProtocol.swift; sourceTree = "<group>"; };
+		12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryProtocol.swift; sourceTree = "<group>"; };
+		12C643082BE0E4FF00B2C454 /* PostDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDao.swift; sourceTree = "<group>"; };
+		12C6430B2BE0EC4200B2C454 /* DBPostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DBPostModel.xcdatamodel; sourceTree = "<group>"; };
+		12C6430D2BE0F5D000B2C454 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
+		12C643112BE100B100B2C454 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		12C643152BE101CC00B2C454 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		12C643172BE1314400B2C454 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		12D003C22BE21FE9000A5DE6 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
+		12E02CED2BE6322400C076E9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		12E02CF52BE6369100C076E9 /* HomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12E02CF72BE6369100C076E9 /* HomeworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTests.swift; sourceTree = "<group>"; };
+		12E02CFE2BE636BF00C076E9 /* Homework.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Homework.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1287109C2BDD1A5500A44B4C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				128710E52BDD4B2A00A44B4C /* Alamofire in Frameworks */,
-				128710E72BDD4B2A00A44B4C /* AlamofireDynamic in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		128710AC2BDD1A5600A44B4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -84,15 +92,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12E02CF22BE6369100C076E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		128710962BDD1A5500A44B4C = {
 			isa = PBXGroup;
 			children = (
+				12E02CFE2BE636BF00C076E9 /* Homework.xctestplan */,
 				128710A12BDD1A5500A44B4C /* Homework */,
-				128710B22BDD1A5600A44B4C /* HomeworkTests */,
 				128710BC2BDD1A5600A44B4C /* HomeworkUITests */,
+				12E02CF62BE6369100C076E9 /* HomeworkTests */,
 				128710A02BDD1A5500A44B4C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				1287109F2BDD1A5500A44B4C /* Homework.app */,
-				128710AF2BDD1A5600A44B4C /* HomeworkTests.xctest */,
 				128710B92BDD1A5600A44B4C /* HomeworkUITests.xctest */,
+				12E02CF52BE6369100C076E9 /* HomeworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,10 +126,11 @@
 		128710A12BDD1A5500A44B4C /* Homework */ = {
 			isa = PBXGroup;
 			children = (
-				128710D12BDD246B00A44B4C /* Services */,
-				128710CE2BDD1D9D00A44B4C /* Models */,
+				12E02CEC2BE631FC00C076E9 /* Extensions */,
+				12C643042BE0E2FC00B2C454 /* Repository */,
+				12C643032BE0E2D500B2C454 /* Services */,
+				12C643022BE0E29100B2C454 /* UI */,
 				128710A22BDD1A5500A44B4C /* HomeworkApp.swift */,
-				128710A42BDD1A5500A44B4C /* MainScreen.swift */,
 				128710A62BDD1A5600A44B4C /* Assets.xcassets */,
 				128710A82BDD1A5600A44B4C /* Preview Content */,
 			);
@@ -128,14 +145,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		128710B22BDD1A5600A44B4C /* HomeworkTests */ = {
-			isa = PBXGroup;
-			children = (
-				128710B32BDD1A5600A44B4C /* HomeworkTests.swift */,
-			);
-			path = HomeworkTests;
-			sourceTree = "<group>";
-		};
 		128710BC2BDD1A5600A44B4C /* HomeworkUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,32 +154,112 @@
 			path = HomeworkUITests;
 			sourceTree = "<group>";
 		};
-		128710CE2BDD1D9D00A44B4C /* Models */ = {
+		128710D12BDD246B00A44B4C /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				128710E82BDE31F200A44B4C /* User Details */,
-				128710CC2BDD1D8400A44B4C /* Post.swift */,
+				12C643192BE131D300B2C454 /* Model */,
+				128710D22BDD24C800A44B4C /* ApiService.swift */,
+				12041D862BE4BD2A009997E6 /* ApiServiceProtocol.swift */,
 			);
-			path = Models;
+			path = Api;
 			sourceTree = "<group>";
 		};
-		128710D12BDD246B00A44B4C /* Services */ = {
+		129655F22BE4DB9800A36E79 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				128710D22BDD24C800A44B4C /* WebService.swift */,
+				12C6430A2BE0EC4200B2C454 /* Homework.xcdatamodeld */,
+				1218014B2BE6097600373FC8 /* DbPostModelExtension.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12C642FF2BE0DF8000B2C454 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				129655F22BE4DB9800A36E79 /* Model */,
+				12C643082BE0E4FF00B2C454 /* PostDao.swift */,
+				129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
+		12C643022BE0E29100B2C454 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				12C643142BE1012400B2C454 /* posts */,
+				12C643152BE101CC00B2C454 /* MainScreen.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		12C643032BE0E2D500B2C454 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				128710D12BDD246B00A44B4C /* Api */,
+				12C642FF2BE0DF8000B2C454 /* Dao */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		128710E82BDE31F200A44B4C /* User Details */ = {
+		12C643042BE0E2FC00B2C454 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				128710EB2BDE322D00A44B4C /* Address.swift */,
-				128710CF2BDD1DBF00A44B4C /* Company.swift */,
-				128710ED2BDE324E00A44B4C /* Geo.swift */,
-				128710E92BDE321700A44B4C /* User.swift */,
+				12C6431A2BE131E800B2C454 /* Entity */,
+				12C6431E2BE1323F00B2C454 /* Mapper */,
+				12C6430D2BE0F5D000B2C454 /* PostRepository.swift */,
+				12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */,
 			);
-			path = "User Details";
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		12C643142BE1012400B2C454 /* posts */ = {
+			isa = PBXGroup;
+			children = (
+				12C643112BE100B100B2C454 /* PostsViewModel.swift */,
+				128710A42BDD1A5500A44B4C /* PostsScreenView.swift */,
+			);
+			path = posts;
+			sourceTree = "<group>";
+		};
+		12C643192BE131D300B2C454 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */,
+				128710E92BDE321700A44B4C /* ApiUserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		12C6431A2BE131E800B2C454 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				12D003C22BE21FE9000A5DE6 /* PostEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		12C6431E2BE1323F00B2C454 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				12C643172BE1314400B2C454 /* Mapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		12E02CEC2BE631FC00C076E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				12E02CED2BE6322400C076E9 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		12E02CF62BE6369100C076E9 /* HomeworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				12E02CF72BE6369100C076E9 /* HomeworkTests.swift */,
+			);
+			path = HomeworkTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,30 +279,10 @@
 			);
 			name = Homework;
 			packageProductDependencies = (
-				128710E42BDD4B2A00A44B4C /* Alamofire */,
-				128710E62BDD4B2A00A44B4C /* AlamofireDynamic */,
 			);
 			productName = Homework;
 			productReference = 1287109F2BDD1A5500A44B4C /* Homework.app */;
 			productType = "com.apple.product-type.application";
-		};
-		128710AE2BDD1A5600A44B4C /* HomeworkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 128710C62BDD1A5600A44B4C /* Build configuration list for PBXNativeTarget "HomeworkTests" */;
-			buildPhases = (
-				128710AB2BDD1A5600A44B4C /* Sources */,
-				128710AC2BDD1A5600A44B4C /* Frameworks */,
-				128710AD2BDD1A5600A44B4C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				128710B12BDD1A5600A44B4C /* PBXTargetDependency */,
-			);
-			name = HomeworkTests;
-			productName = HomeworkTests;
-			productReference = 128710AF2BDD1A5600A44B4C /* HomeworkTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		128710B82BDD1A5600A44B4C /* HomeworkUITests */ = {
 			isa = PBXNativeTarget;
@@ -233,6 +302,24 @@
 			productReference = 128710B92BDD1A5600A44B4C /* HomeworkUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		12E02CF42BE6369100C076E9 /* HomeworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12E02CFB2BE6369100C076E9 /* Build configuration list for PBXNativeTarget "HomeworkTests" */;
+			buildPhases = (
+				12E02CF12BE6369100C076E9 /* Sources */,
+				12E02CF22BE6369100C076E9 /* Frameworks */,
+				12E02CF32BE6369100C076E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12E02CFA2BE6369100C076E9 /* PBXTargetDependency */,
+			);
+			name = HomeworkTests;
+			productName = HomeworkTests;
+			productReference = 12E02CF52BE6369100C076E9 /* HomeworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -246,11 +333,11 @@
 					1287109E2BDD1A5500A44B4C = {
 						CreatedOnToolsVersion = 15.3;
 					};
-					128710AE2BDD1A5600A44B4C = {
+					128710B82BDD1A5600A44B4C = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 1287109E2BDD1A5500A44B4C;
 					};
-					128710B82BDD1A5600A44B4C = {
+					12E02CF42BE6369100C076E9 = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 1287109E2BDD1A5500A44B4C;
 					};
@@ -266,15 +353,14 @@
 			);
 			mainGroup = 128710962BDD1A5500A44B4C;
 			packageReferences = (
-				128710E32BDD4B2A00A44B4C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 128710A02BDD1A5500A44B4C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1287109E2BDD1A5500A44B4C /* Homework */,
-				128710AE2BDD1A5600A44B4C /* HomeworkTests */,
 				128710B82BDD1A5600A44B4C /* HomeworkUITests */,
+				12E02CF42BE6369100C076E9 /* HomeworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -289,14 +375,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		128710AD2BDD1A5600A44B4C /* Resources */ = {
+		128710B72BDD1A5600A44B4C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		128710B72BDD1A5600A44B4C /* Resources */ = {
+		12E02CF32BE6369100C076E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -310,22 +396,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128710CD2BDD1D8400A44B4C /* Post.swift in Sources */,
-				128710D02BDD1DBF00A44B4C /* Company.swift in Sources */,
-				128710EA2BDE321700A44B4C /* User.swift in Sources */,
-				128710A52BDD1A5500A44B4C /* MainScreen.swift in Sources */,
-				128710D32BDD24C800A44B4C /* WebService.swift in Sources */,
+				128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */,
+				12C643122BE100B100B2C454 /* PostsViewModel.swift in Sources */,
+				12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */,
+				12C643162BE101CC00B2C454 /* MainScreen.swift in Sources */,
+				12C643182BE1314400B2C454 /* Mapper.swift in Sources */,
+				1218014C2BE6097600373FC8 /* DbPostModelExtension.swift in Sources */,
+				12041D872BE4BD2A009997E6 /* ApiServiceProtocol.swift in Sources */,
+				12D003C32BE21FE9000A5DE6 /* PostEntity.swift in Sources */,
+				128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */,
+				128710A52BDD1A5500A44B4C /* PostsScreenView.swift in Sources */,
+				12C643092BE0E4FF00B2C454 /* PostDao.swift in Sources */,
+				12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */,
+				128710D32BDD24C800A44B4C /* ApiService.swift in Sources */,
 				128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */,
-				128710EC2BDE322D00A44B4C /* Address.swift in Sources */,
-				128710EE2BDE324E00A44B4C /* Geo.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		128710AB2BDD1A5600A44B4C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				128710B42BDD1A5600A44B4C /* HomeworkTests.swift in Sources */,
+				12E02CEE2BE6322400C076E9 /* String.swift in Sources */,
+				129655F12BE4DB5900A36E79 /* PostDaoProtocol.swift in Sources */,
+				12AE0C8A2BE60C2900E2DACF /* PostRepositoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,18 +425,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		12E02CF12BE6369100C076E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12E02CF82BE6369100C076E9 /* HomeworkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		128710B12BDD1A5600A44B4C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1287109E2BDD1A5500A44B4C /* Homework */;
-			targetProxy = 128710B02BDD1A5600A44B4C /* PBXContainerItemProxy */;
-		};
 		128710BB2BDD1A5600A44B4C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1287109E2BDD1A5500A44B4C /* Homework */;
 			targetProxy = 128710BA2BDD1A5600A44B4C /* PBXContainerItemProxy */;
+		};
+		12E02CFA2BE6369100C076E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1287109E2BDD1A5500A44B4C /* Homework */;
+			targetProxy = 12E02CF92BE6369100C076E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -489,6 +584,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,6 +614,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,46 +625,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		128710C72BDD1A5600A44B4C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CQ6JSHCP7Q;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junior.HomeworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homework.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homework";
-			};
-			name = Debug;
-		};
-		128710C82BDD1A5600A44B4C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CQ6JSHCP7Q;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junior.HomeworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homework.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homework";
 			};
 			name = Release;
 		};
@@ -607,6 +664,42 @@
 			};
 			name = Release;
 		};
+		12E02CFC2BE6369100C076E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CQ6JSHCP7Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junior.HomeworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homework.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homework";
+			};
+			name = Debug;
+		};
+		12E02CFD2BE6369100C076E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CQ6JSHCP7Q;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junior.HomeworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Homework.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Homework";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -628,15 +721,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		128710C62BDD1A5600A44B4C /* Build configuration list for PBXNativeTarget "HomeworkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				128710C72BDD1A5600A44B4C /* Debug */,
-				128710C82BDD1A5600A44B4C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		128710C92BDD1A5600A44B4C /* Build configuration list for PBXNativeTarget "HomeworkUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -646,31 +730,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		12E02CFB2BE6369100C076E9 /* Build configuration list for PBXNativeTarget "HomeworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12E02CFC2BE6369100C076E9 /* Debug */,
+				12E02CFD2BE6369100C076E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		128710E32BDD4B2A00A44B4C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.1;
-			};
+/* Begin XCVersionGroup section */
+		12C6430A2BE0EC4200B2C454 /* Homework.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				12C6430B2BE0EC4200B2C454 /* DBPostModel.xcdatamodel */,
+			);
+			currentVersion = 12C6430B2BE0EC4200B2C454 /* DBPostModel.xcdatamodel */;
+			path = Homework.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
 		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		128710E42BDD4B2A00A44B4C /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 128710E32BDD4B2A00A44B4C /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		128710E62BDD4B2A00A44B4C /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 128710E32BDD4B2A00A44B4C /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
-		};
-/* End XCSwiftPackageProductDependency section */
+/* End XCVersionGroup section */
 	};
 	rootObject = 128710972BDD1A5500A44B4C /* Project object */;
 }
