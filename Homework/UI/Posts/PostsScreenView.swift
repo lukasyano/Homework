@@ -9,15 +9,20 @@ struct PostsScreenView: View {
 
     var body: some View {
         NavigationStack {
-            List(viewModel.posts) { postItem(item: $0) }
-                .navigationTitle(String.postNavigationTitle)
-                .refreshable { viewModel.refresh() }
-                .alert(isPresented: $viewModel.showErrorAlert) { errorAlert }
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        if viewModel.isLoading { progressView }
-                    }
+            List(viewModel.posts) { post in
+                NavigationLink(destination: AboutUserView(postEntity: post)) {
+                    postItem(item: post)
                 }
+            }
+            .navigationTitle(String.postNavigationTitle)
+            .listStyle(.plain)
+            .refreshable { viewModel.refresh() }
+            .alert(isPresented: $viewModel.showErrorAlert) { errorAlert }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    if viewModel.isLoading { progressView }
+                }
+            }
         }
     }
 
@@ -42,8 +47,10 @@ struct PostsScreenView: View {
     fileprivate func postItem(item: PostEntity) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             Text(item.title)
+                .font(.title3)
+                .lineLimit(1)
             HStack(alignment: .bottom) {
-                Text(item.author)
+                Text(item.author).font(.headline)
             }
         }
     }

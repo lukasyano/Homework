@@ -20,6 +20,7 @@
 		128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* ApiUserModel.swift */; };
 		129655F12BE4DB5900A36E79 /* PostDaoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */; };
 		12AE0C8A2BE60C2900E2DACF /* PostRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */; };
+		12BC70B22BE7710E00ADC99D /* AboutUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BC70B12BE7710E00ADC99D /* AboutUserView.swift */; };
 		12C643092BE0E4FF00B2C454 /* PostDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643082BE0E4FF00B2C454 /* PostDao.swift */; };
 		12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430A2BE0EC4200B2C454 /* Homework.xcdatamodeld */; };
 		12C6430E2BE0F5D000B2C454 /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C6430D2BE0F5D000B2C454 /* PostRepository.swift */; };
@@ -64,6 +65,7 @@
 		128710E92BDE321700A44B4C /* ApiUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUserModel.swift; sourceTree = "<group>"; };
 		129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDaoProtocol.swift; sourceTree = "<group>"; };
 		12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryProtocol.swift; sourceTree = "<group>"; };
+		12BC70B12BE7710E00ADC99D /* AboutUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUserView.swift; sourceTree = "<group>"; };
 		12C643082BE0E4FF00B2C454 /* PostDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDao.swift; sourceTree = "<group>"; };
 		12C6430B2BE0EC4200B2C454 /* DBPostModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DBPostModel.xcdatamodel; sourceTree = "<group>"; };
 		12C6430D2BE0F5D000B2C454 /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		12BC70B32BE772FC00ADC99D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				12BC70B12BE7710E00ADC99D /* AboutUserView.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		12C642FF2BE0DF8000B2C454 /* Dao */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +196,8 @@
 		12C643022BE0E29100B2C454 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				12C643142BE1012400B2C454 /* posts */,
+				12BC70B32BE772FC00ADC99D /* Details */,
+				12C643142BE1012400B2C454 /* Posts */,
 				12C643152BE101CC00B2C454 /* MainScreen.swift */,
 			);
 			path = UI;
@@ -212,13 +223,13 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		12C643142BE1012400B2C454 /* posts */ = {
+		12C643142BE1012400B2C454 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
 				12C643112BE100B100B2C454 /* PostsViewModel.swift */,
 				128710A42BDD1A5500A44B4C /* PostsScreenView.swift */,
 			);
-			path = posts;
+			path = Posts;
 			sourceTree = "<group>";
 		};
 		12C643192BE131D300B2C454 /* Model */ = {
@@ -407,6 +418,7 @@
 				128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */,
 				128710A52BDD1A5500A44B4C /* PostsScreenView.swift in Sources */,
 				12C643092BE0E4FF00B2C454 /* PostDao.swift in Sources */,
+				12BC70B22BE7710E00ADC99D /* AboutUserView.swift in Sources */,
 				12C6430C2BE0EC4200B2C454 /* Homework.xcdatamodeld in Sources */,
 				128710D32BDD24C800A44B4C /* ApiService.swift in Sources */,
 				128710A32BDD1A5500A44B4C /* HomeworkApp.swift in Sources */,
