@@ -18,6 +18,7 @@
 		128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */; };
 		128710D32BDD24C800A44B4C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710D22BDD24C800A44B4C /* ApiService.swift */; };
 		128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* ApiUserModel.swift */; };
+		128C72272BE7E1FB00110B8A /* MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C72262BE7E1FB00110B8A /* MapperTests.swift */; };
 		129655F12BE4DB5900A36E79 /* PostDaoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */; };
 		12AE0C8A2BE60C2900E2DACF /* PostRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */; };
 		12BC70B22BE7710E00ADC99D /* AboutUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BC70B12BE7710E00ADC99D /* AboutUserView.swift */; };
@@ -63,6 +64,7 @@
 		128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPostModel.swift; sourceTree = "<group>"; };
 		128710D22BDD24C800A44B4C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		128710E92BDE321700A44B4C /* ApiUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUserModel.swift; sourceTree = "<group>"; };
+		128C72262BE7E1FB00110B8A /* MapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
 		129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDaoProtocol.swift; sourceTree = "<group>"; };
 		12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryProtocol.swift; sourceTree = "<group>"; };
 		12BC70B12BE7710E00ADC99D /* AboutUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUserView.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				12E02CF72BE6369100C076E9 /* HomeworkTests.swift */,
+				128C72262BE7E1FB00110B8A /* MapperTests.swift */,
 			);
 			path = HomeworkTests;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128C72272BE7E1FB00110B8A /* MapperTests.swift in Sources */,
 				12E02CF82BE6369100C076E9 /* HomeworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -570,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
