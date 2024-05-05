@@ -7,12 +7,10 @@ struct HomeworkApp: App {
     private let api: ApiServiceProtocol = ApiService()
 
     var body: some Scene {
-        let postRepository = PostRepository(postDao: postDao, api: api)
-        let postsViewModel = PostsViewModel(postRepository: postRepository)
+        let postRepository: PostRepositoryProtocol = PostRepository(postDao: postDao, api: api)
+
         WindowGroup {
-            MainScreen()
-                .environmentObject(postRepository)
-                .environmentObject(postsViewModel)
+            MainScreen(postRepository: postRepository)
         }
     }
 }
