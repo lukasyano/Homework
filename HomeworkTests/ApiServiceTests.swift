@@ -9,15 +9,14 @@ class ApiServiceTests: XCTestCase {
         super.setUp()
         apiService = ApiService()
     }
-    
+
     override func tearDown() {
         apiService = nil
         super.tearDown()
     }
-    
+
     func test_apiService_fetchPosts_shouldFetchNotEmpty() {
         let expectation = XCTestExpectation(description: "Fetch posts")
-        
         let cancellable = apiService.fetchPosts()
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -36,7 +35,6 @@ class ApiServiceTests: XCTestCase {
     
     func test_apiService_fetchUserData_shouldFetchUserWithSameIdWhichRequested() {
         let expectation = XCTestExpectation(description: "Fetch user data")
-        
         let userId = 1
         let cancellable = apiService.fetchUserData(userId: userId)
             .sink(receiveCompletion: { completion in

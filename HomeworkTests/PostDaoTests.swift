@@ -11,12 +11,12 @@ class PostDaoTests: XCTestCase {
         super.setUp()
         postDao = PostDao()
     }
-    
+
     override func tearDown() {
         postDao = nil
         super.tearDown()
     }
-    
+
     func test_PostDao_fetch_shouldFetchNotNilData() {
         let expectation = XCTestExpectation(description: "Fetch posts from CoreData")
         
