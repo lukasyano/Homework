@@ -3,7 +3,7 @@ import CoreData
 import XCTest
 
 final class MapperTests: XCTestCase {
-    func testMapFromApi() {
+    func test_mapper_MapFromApi_shouldTransformApiModelsToEntities() {
         // Given
         let post = ApiPostModel(
             userId: -1,
@@ -21,8 +21,7 @@ final class MapperTests: XCTestCase {
         )
 
         // When
-        let result = Mapper.mapFromApi(post: post, user: user)
-
+        let result : PostEntity = Mapper.mapFromApi(post: post, user: user)
         // Then
         XCTAssertEqual(result.title, "Title") //make sure First letter capitalised
         XCTAssertEqual(result.author, "name")
@@ -33,7 +32,7 @@ final class MapperTests: XCTestCase {
         XCTAssertEqual(result.companyName, "companyName")
     }
 
-    func testMapFromDB() {
+    func test_mapper_mapFromDb_shouldTransformDbModelToPostEntity() {
         // Given
         let container = NSPersistentContainer(name: "Homework")
         let description = NSPersistentStoreDescription()
@@ -50,31 +49,29 @@ final class MapperTests: XCTestCase {
         
         let dbModel = DBPostModel(entity: postEntity, insertInto: moc)
         dbModel.id = UUID()
-        dbModel.title = "Test title"
-        dbModel.author = "John Doe"
-        dbModel.email = "john@example.com"
-        dbModel.website = "www.example.com"
+        dbModel.title = "Title"
+        dbModel.author = "author"
+        dbModel.email = "email@email.com"
+        dbModel.website = "www.website.com"
         dbModel.street = "123 Main St"
-        dbModel.city = "New York"
-        dbModel.companyName = "Example Inc"
+        dbModel.city = "City"
+        dbModel.companyName = "Baltic Amadeus"
         
         do {
             try moc.save()
         } catch {
             fatalError("Failure to save context: \(error)")
         }
-        
         // When
         let result = Mapper.mapFromDB(dbModel: [dbModel])
-        
         // Then
         XCTAssertEqual(result.count, 1)
-        XCTAssertEqual(result[0].title, "Test title")
-        XCTAssertEqual(result[0].author, "John Doe")
-        XCTAssertEqual(result[0].email, "john@example.com")
-        XCTAssertEqual(result[0].website, "www.example.com")
+        XCTAssertEqual(result[0].title, "Title")
+        XCTAssertEqual(result[0].author, "author")
+        XCTAssertEqual(result[0].email, "email@email.com")
+        XCTAssertEqual(result[0].website, "www.website.com")
         XCTAssertEqual(result[0].street, "123 Main St")
-        XCTAssertEqual(result[0].city, "New York")
-        XCTAssertEqual(result[0].companyName, "Example Inc")
+        XCTAssertEqual(result[0].city, "City")
+        XCTAssertEqual(result[0].companyName, "Baltic Amadeus")
     }
 }

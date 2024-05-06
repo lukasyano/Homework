@@ -1,9 +1,8 @@
-import XCTest
 import Combine
 @testable import Homework
+import XCTest
 
 class ApiServiceTests: XCTestCase {
-    
     var apiService: ApiService!
     
     override func setUp() {
@@ -16,7 +15,7 @@ class ApiServiceTests: XCTestCase {
         super.tearDown()
     }
     
-    func testFetchPosts() {
+    func test_apiService_fetchPosts_shouldFetchNotEmpty() {
         let expectation = XCTestExpectation(description: "Fetch posts")
         
         let cancellable = apiService.fetchPosts()
@@ -25,17 +24,17 @@ class ApiServiceTests: XCTestCase {
                 case .finished:
                     expectation.fulfill()
                 case .failure(let error):
-                    XCTFail("Failed to fetch posts with error: \(error.localizedDescription)")
+                    XCTFail(error.localizedDescription)
                 }
             }, receiveValue: { posts in
-                XCTAssertFalse(posts.isEmpty, "Posts should not be empty")
+                XCTAssertFalse(posts.isEmpty)
             })
         
         wait(for: [expectation], timeout: 5.0)
         cancellable.cancel()
     }
     
-    func testFetchUserData() {
+    func test_apiService_fetchUserData_shouldFetchUserWithSameIdWhichRequested() {
         let expectation = XCTestExpectation(description: "Fetch user data")
         
         let userId = 1
@@ -45,10 +44,10 @@ class ApiServiceTests: XCTestCase {
                 case .finished:
                     expectation.fulfill()
                 case .failure(let error):
-                    XCTFail("Failed to fetch user data with error: \(error.localizedDescription)")
+                    XCTFail(error.localizedDescription)
                 }
             }, receiveValue: { user in
-                XCTAssertEqual(user.id, userId, "User ID should match the requested")
+                XCTAssertEqual(user.id, userId)
             })
         
         wait(for: [expectation], timeout: 5.0)

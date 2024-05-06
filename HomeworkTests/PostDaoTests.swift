@@ -1,10 +1,9 @@
-import XCTest
 import Combine
 import CoreData
 @testable import Homework
+import XCTest
 
 class PostDaoTests: XCTestCase {
-    
     var postDao: PostDao!
     var persistentContainer: NSPersistentContainer!
     
@@ -18,7 +17,7 @@ class PostDaoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testFetch() {
+    func test_PostDao_fetch_shouldFetchNotNilData() {
         let expectation = XCTestExpectation(description: "Fetch posts from CoreData")
         
         let cancellable = postDao.fetch()
@@ -37,7 +36,7 @@ class PostDaoTests: XCTestCase {
         cancellable.cancel()
     }
     
-    func testUpdate() {
+    func test_PostDao_update_shouldDeleteExistingDataAndInsertNewProvided() {
         let expectation = XCTestExpectation(description: "Update posts in CoreData")
         
         let postEntity = PostEntity(
