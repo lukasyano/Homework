@@ -22,9 +22,9 @@ final class UiTestingPostsScreenView: XCTestCase {
         // GIVEN
         let firstItemFromRow = app.collectionViews.cells.buttons.firstMatch
         let aboutUserScreen = app.otherElements["AboutUserScreen"]
-        //WHEN
+        // WHEN
         firstItemFromRow.tap()
-        //THEN
+        // THEN
         XCTAssertTrue(aboutUserScreen.waitForExistence(timeout: 5))
     }
 }

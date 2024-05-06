@@ -21,9 +21,9 @@ final class MapperTests: XCTestCase {
         )
 
         // When
-        let result : PostEntity = Mapper.mapFromApi(post: post, user: user)
+        let result: PostEntity = Mapper.mapFromApi(post: post, user: user)
         // Then
-        XCTAssertEqual(result.title, "Title") //make sure First letter capitalised
+        XCTAssertEqual(result.title, "Title") // make sure First letter capitalised
         XCTAssertEqual(result.author, "name")
         XCTAssertEqual(result.email, "email")
         XCTAssertEqual(result.website, "website")
@@ -44,9 +44,9 @@ final class MapperTests: XCTestCase {
             }
         }
         let moc = container.viewContext
-        
+
         let postEntity = NSEntityDescription.entity(forEntityName: "DBPostModel", in: moc)!
-        
+
         let dbModel = DBPostModel(entity: postEntity, insertInto: moc)
         dbModel.id = UUID()
         dbModel.title = "Title"
@@ -56,7 +56,7 @@ final class MapperTests: XCTestCase {
         dbModel.street = "123 Main St"
         dbModel.city = "City"
         dbModel.companyName = "Baltic Amadeus"
-        
+
         do {
             try moc.save()
         } catch {
