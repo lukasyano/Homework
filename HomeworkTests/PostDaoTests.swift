@@ -6,7 +6,7 @@ import XCTest
 class PostDaoTests: XCTestCase {
     var postDao: PostDao!
     var persistentContainer: NSPersistentContainer!
-    
+
     override func setUp() {
         super.setUp()
         postDao = PostDao()
@@ -19,7 +19,7 @@ class PostDaoTests: XCTestCase {
 
     func test_PostDao_fetch_shouldFetchNotNilData() {
         let expectation = XCTestExpectation(description: "Fetch posts from CoreData")
-        
+
         let cancellable = postDao.fetch()
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -31,14 +31,14 @@ class PostDaoTests: XCTestCase {
             }, receiveValue: { dbPosts in
                 XCTAssertNotNil(dbPosts)
             })
-        
+
         wait(for: [expectation], timeout: 5.0)
         cancellable.cancel()
     }
-    
+
     func test_PostDao_update_shouldDeleteExistingDataAndInsertNewProvided() {
         let expectation = XCTestExpectation(description: "Update posts in CoreData")
-        
+
         let postEntity = PostEntity(
             id: UUID(),
             title: "Title",
@@ -49,7 +49,7 @@ class PostDaoTests: XCTestCase {
             city: "",
             companyName: ""
         )
-        
+
         let cancellable = postDao.update(with: [postEntity])
             .flatMap { _ in
                 self.postDao.fetch()
@@ -67,7 +67,7 @@ class PostDaoTests: XCTestCase {
                 XCTAssertNotNil(updatedPost)
                 XCTAssertEqual(updatedPost.title, postEntity.title)
             })
-        
+
         wait(for: [expectation], timeout: 5.0)
         cancellable.cancel()
     }

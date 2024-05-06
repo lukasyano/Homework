@@ -7,13 +7,13 @@ struct AboutUserView: View {
         ZStack {
             Color.clear.ignoresSafeArea()
                 .accessibilityElement().accessibilityLabel("AboutUserScreen")
-            
+
             VStack(alignment: .leading, spacing: 10) {
                 Text(postEntity.title)
                     .font(.title)
                     .fontWeight(.bold)
                 Divider()
-                
+
                 Text(String.email + (postEntity.email))
                 Text(String.website + (postEntity.website))
                 Text(String.address)
@@ -21,11 +21,11 @@ struct AboutUserView: View {
                 Text("\(postEntity.street), \(postEntity.city)")
                     .padding(.leading, 20)
                 Divider()
-                
+
                 Text(String.company)
                     .fontWeight(.bold)
                 Text(postEntity.companyName)
-                
+
                 Spacer()
             }
             .padding(20)

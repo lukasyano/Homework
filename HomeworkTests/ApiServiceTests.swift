@@ -4,7 +4,7 @@ import XCTest
 
 class ApiServiceTests: XCTestCase {
     var apiService: ApiService!
-    
+
     override func setUp() {
         super.setUp()
         apiService = ApiService()
@@ -28,11 +28,11 @@ class ApiServiceTests: XCTestCase {
             }, receiveValue: { posts in
                 XCTAssertFalse(posts.isEmpty)
             })
-        
+
         wait(for: [expectation], timeout: 5.0)
         cancellable.cancel()
     }
-    
+
     func test_apiService_fetchUserData_shouldFetchUserWithSameIdWhichRequested() {
         let expectation = XCTestExpectation(description: "Fetch user data")
         let userId = 1
@@ -47,7 +47,7 @@ class ApiServiceTests: XCTestCase {
             }, receiveValue: { user in
                 XCTAssertEqual(user.id, userId)
             })
-        
+
         wait(for: [expectation], timeout: 5.0)
         cancellable.cancel()
     }
