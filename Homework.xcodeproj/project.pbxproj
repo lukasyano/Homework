@@ -13,11 +13,14 @@
 		128710A52BDD1A5500A44B4C /* PostsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710A42BDD1A5500A44B4C /* PostsScreenView.swift */; };
 		128710A72BDD1A5600A44B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128710A62BDD1A5600A44B4C /* Assets.xcassets */; };
 		128710AA2BDD1A5600A44B4C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128710A92BDD1A5600A44B4C /* Preview Assets.xcassets */; };
-		128710BE2BDD1A5600A44B4C /* HomeworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710BD2BDD1A5600A44B4C /* HomeworkUITests.swift */; };
 		128710C02BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710BF2BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift */; };
 		128710CD2BDD1D8400A44B4C /* ApiPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */; };
 		128710D32BDD24C800A44B4C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710D22BDD24C800A44B4C /* ApiService.swift */; };
 		128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* ApiUserModel.swift */; };
+		128C72272BE7E1FB00110B8A /* MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C72262BE7E1FB00110B8A /* MapperTests.swift */; };
+		128C72292BE7E8D500110B8A /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C72282BE7E8D500110B8A /* ApiServiceTests.swift */; };
+		128C722B2BE7EE2F00110B8A /* PostDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C722A2BE7EE2F00110B8A /* PostDaoTests.swift */; };
+		128C722D2BE8B06F00110B8A /* UiTestingPostsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C722C2BE8B06F00110B8A /* UiTestingPostsScreenView.swift */; };
 		129655F12BE4DB5900A36E79 /* PostDaoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */; };
 		12AE0C8A2BE60C2900E2DACF /* PostRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */; };
 		12BC70B22BE7710E00ADC99D /* AboutUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BC70B12BE7710E00ADC99D /* AboutUserView.swift */; };
@@ -29,7 +32,6 @@
 		12C643182BE1314400B2C454 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643172BE1314400B2C454 /* Mapper.swift */; };
 		12D003C32BE21FE9000A5DE6 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D003C22BE21FE9000A5DE6 /* PostEntity.swift */; };
 		12E02CEE2BE6322400C076E9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02CED2BE6322400C076E9 /* String.swift */; };
-		12E02CF82BE6369100C076E9 /* HomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02CF72BE6369100C076E9 /* HomeworkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,11 +60,14 @@
 		128710A62BDD1A5600A44B4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128710A92BDD1A5600A44B4C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		128710B92BDD1A5600A44B4C /* HomeworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		128710BD2BDD1A5600A44B4C /* HomeworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkUITests.swift; sourceTree = "<group>"; };
 		128710BF2BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		128710CC2BDD1D8400A44B4C /* ApiPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPostModel.swift; sourceTree = "<group>"; };
 		128710D22BDD24C800A44B4C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		128710E92BDE321700A44B4C /* ApiUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUserModel.swift; sourceTree = "<group>"; };
+		128C72262BE7E1FB00110B8A /* MapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
+		128C72282BE7E8D500110B8A /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
+		128C722A2BE7EE2F00110B8A /* PostDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDaoTests.swift; sourceTree = "<group>"; };
+		128C722C2BE8B06F00110B8A /* UiTestingPostsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiTestingPostsScreenView.swift; sourceTree = "<group>"; };
 		129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDaoProtocol.swift; sourceTree = "<group>"; };
 		12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryProtocol.swift; sourceTree = "<group>"; };
 		12BC70B12BE7710E00ADC99D /* AboutUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUserView.swift; sourceTree = "<group>"; };
@@ -75,7 +80,6 @@
 		12D003C22BE21FE9000A5DE6 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
 		12E02CED2BE6322400C076E9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		12E02CF52BE6369100C076E9 /* HomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		12E02CF72BE6369100C076E9 /* HomeworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTests.swift; sourceTree = "<group>"; };
 		12E02CFE2BE636BF00C076E9 /* Homework.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Homework.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +154,8 @@
 		128710BC2BDD1A5600A44B4C /* HomeworkUITests */ = {
 			isa = PBXGroup;
 			children = (
-				128710BD2BDD1A5600A44B4C /* HomeworkUITests.swift */,
 				128710BF2BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift */,
+				128C722C2BE8B06F00110B8A /* UiTestingPostsScreenView.swift */,
 			);
 			path = HomeworkUITests;
 			sourceTree = "<group>";
@@ -268,7 +272,9 @@
 		12E02CF62BE6369100C076E9 /* HomeworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				12E02CF72BE6369100C076E9 /* HomeworkTests.swift */,
+				128C72262BE7E1FB00110B8A /* MapperTests.swift */,
+				128C72282BE7E8D500110B8A /* ApiServiceTests.swift */,
+				128C722A2BE7EE2F00110B8A /* PostDaoTests.swift */,
 			);
 			path = HomeworkTests;
 			sourceTree = "<group>";
@@ -433,7 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				128710C02BDD1A5600A44B4C /* HomeworkUITestsLaunchTests.swift in Sources */,
-				128710BE2BDD1A5600A44B4C /* HomeworkUITests.swift in Sources */,
+				128C722D2BE8B06F00110B8A /* UiTestingPostsScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +447,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12E02CF82BE6369100C076E9 /* HomeworkTests.swift in Sources */,
+				128C722B2BE7EE2F00110B8A /* PostDaoTests.swift in Sources */,
+				128C72292BE7E8D500110B8A /* ApiServiceTests.swift in Sources */,
+				128C72272BE7E1FB00110B8A /* MapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -570,7 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
