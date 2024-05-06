@@ -19,6 +19,8 @@
 		128710D32BDD24C800A44B4C /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710D22BDD24C800A44B4C /* ApiService.swift */; };
 		128710EA2BDE321700A44B4C /* ApiUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128710E92BDE321700A44B4C /* ApiUserModel.swift */; };
 		128C72272BE7E1FB00110B8A /* MapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C72262BE7E1FB00110B8A /* MapperTests.swift */; };
+		128C72292BE7E8D500110B8A /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C72282BE7E8D500110B8A /* ApiServiceTests.swift */; };
+		128C722B2BE7EE2F00110B8A /* PostDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128C722A2BE7EE2F00110B8A /* PostDaoTests.swift */; };
 		129655F12BE4DB5900A36E79 /* PostDaoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */; };
 		12AE0C8A2BE60C2900E2DACF /* PostRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */; };
 		12BC70B22BE7710E00ADC99D /* AboutUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12BC70B12BE7710E00ADC99D /* AboutUserView.swift */; };
@@ -30,7 +32,6 @@
 		12C643182BE1314400B2C454 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C643172BE1314400B2C454 /* Mapper.swift */; };
 		12D003C32BE21FE9000A5DE6 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D003C22BE21FE9000A5DE6 /* PostEntity.swift */; };
 		12E02CEE2BE6322400C076E9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02CED2BE6322400C076E9 /* String.swift */; };
-		12E02CF82BE6369100C076E9 /* HomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E02CF72BE6369100C076E9 /* HomeworkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		128710D22BDD24C800A44B4C /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		128710E92BDE321700A44B4C /* ApiUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUserModel.swift; sourceTree = "<group>"; };
 		128C72262BE7E1FB00110B8A /* MapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperTests.swift; sourceTree = "<group>"; };
+		128C72282BE7E8D500110B8A /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
+		128C722A2BE7EE2F00110B8A /* PostDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDaoTests.swift; sourceTree = "<group>"; };
 		129655F02BE4DB5900A36E79 /* PostDaoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDaoProtocol.swift; sourceTree = "<group>"; };
 		12AE0C892BE60C2900E2DACF /* PostRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryProtocol.swift; sourceTree = "<group>"; };
 		12BC70B12BE7710E00ADC99D /* AboutUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUserView.swift; sourceTree = "<group>"; };
@@ -77,7 +80,6 @@
 		12D003C22BE21FE9000A5DE6 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
 		12E02CED2BE6322400C076E9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		12E02CF52BE6369100C076E9 /* HomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		12E02CF72BE6369100C076E9 /* HomeworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTests.swift; sourceTree = "<group>"; };
 		12E02CFE2BE636BF00C076E9 /* Homework.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Homework.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -270,8 +272,9 @@
 		12E02CF62BE6369100C076E9 /* HomeworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				12E02CF72BE6369100C076E9 /* HomeworkTests.swift */,
 				128C72262BE7E1FB00110B8A /* MapperTests.swift */,
+				128C72282BE7E8D500110B8A /* ApiServiceTests.swift */,
+				128C722A2BE7EE2F00110B8A /* PostDaoTests.swift */,
 			);
 			path = HomeworkTests;
 			sourceTree = "<group>";
@@ -444,8 +447,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128C722B2BE7EE2F00110B8A /* PostDaoTests.swift in Sources */,
+				128C72292BE7E8D500110B8A /* ApiServiceTests.swift in Sources */,
 				128C72272BE7E1FB00110B8A /* MapperTests.swift in Sources */,
-				12E02CF82BE6369100C076E9 /* HomeworkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

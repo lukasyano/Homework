@@ -24,7 +24,7 @@ final class MapperTests: XCTestCase {
         let result = Mapper.mapFromApi(post: post, user: user)
 
         // Then
-        XCTAssertEqual(result.title, "Title") //make sure First letter capitalized
+        XCTAssertEqual(result.title, "Title") //make sure First letter capitalised
         XCTAssertEqual(result.author, "name")
         XCTAssertEqual(result.email, "email")
         XCTAssertEqual(result.website, "website")
@@ -77,5 +77,4 @@ final class MapperTests: XCTestCase {
         XCTAssertEqual(result[0].city, "New York")
         XCTAssertEqual(result[0].companyName, "Example Inc")
     }
-
 }

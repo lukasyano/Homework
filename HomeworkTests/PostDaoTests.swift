@@ -1,35 +1,75 @@
-//
-//  PostDaoTests.swift
-//  HomeworkTests
-//
-//  Created by Lukas Toliusis on 05/05/2024.
-//
-
 import XCTest
+import Combine
+import CoreData
+@testable import Homework
 
-final class PostDaoTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class PostDaoTests: XCTestCase {
+    
+    var postDao: PostDao!
+    var persistentContainer: NSPersistentContainer!
+    
+    override func setUp() {
+        super.setUp()
+        postDao = PostDao()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        postDao = nil
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testFetch() {
+        let expectation = XCTestExpectation(description: "Fetch posts from CoreData")
+        
+        let cancellable = postDao.fetch()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    expectation.fulfill()
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+            }, receiveValue: { dbPosts in
+                XCTAssertNotNil(dbPosts)
+            })
+        
+        wait(for: [expectation], timeout: 5.0)
+        cancellable.cancel()
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testUpdate() {
+        let expectation = XCTestExpectation(description: "Update posts in CoreData")
+        
+        let postEntity = PostEntity(
+            id: UUID(),
+            title: "Title",
+            author: "",
+            email: "",
+            website: "",
+            street: "",
+            city: "",
+            companyName: ""
+        )
+        
+        let cancellable = postDao.update(with: [postEntity])
+            .flatMap { _ in
+                self.postDao.fetch()
+            }
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    expectation.fulfill()
+                case .failure(let error):
+                    XCTFail(error.localizedDescription)
+                }
+            }, receiveValue: { dbPosts in
+                XCTAssertEqual(dbPosts.count, 1)
+                let updatedPost = dbPosts[0]
+                XCTAssertNotNil(updatedPost)
+                XCTAssertEqual(updatedPost.title, postEntity.title)
+            })
+        
+        wait(for: [expectation], timeout: 5.0)
+        cancellable.cancel()
     }
-
 }
