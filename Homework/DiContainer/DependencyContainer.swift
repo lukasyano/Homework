@@ -10,11 +10,7 @@ class DependencyContainer: ObservableObject {
     }
 }
 
-protocol ViewModelProvider {
-    func makePostsViewModel() -> PostsViewModel
-}
-
-extension DependencyContainer: ViewModelProvider {
+extension DependencyContainer: ViewModelProviderProtocol {
     func makePostsViewModel() -> PostsViewModel {
         return PostsViewModel(postRepository: postRepository)
     }

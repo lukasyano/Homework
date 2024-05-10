@@ -52,6 +52,6 @@ struct PostsScreenView: View {
     }
 }
 
-// #Preview {
-//    PostsScreenView(postRepository: PostRepository(postDao: PostDao(), api: ApiService()))
-// }
+#Preview {
+    PostsScreenView(viewModel: PostsViewModel(postRepository: PostRepository(postDao: PostDao(), api: ApiService())))
+}
