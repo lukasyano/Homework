@@ -3,12 +3,15 @@ import SwiftUI
 
 @main
 struct HomeworkApp: App {
-    private var postDao: PostDaoProtocol = PostDao()
+    private let postDao: PostDaoProtocol = PostDao()
     private let api: ApiServiceProtocol = ApiService()
+    private let postRepository: PostRepositoryProtocol
+
+    init() {
+        self.postRepository = PostRepository(postDao: postDao, api: api)
+    }
 
     var body: some Scene {
-        let postRepository: PostRepositoryProtocol = PostRepository(postDao: postDao, api: api)
-
         WindowGroup {
             MainScreen(postRepository: postRepository)
         }

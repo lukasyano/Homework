@@ -1,13 +1,15 @@
 import SwiftUI
 
 struct MainScreen: View {
-    let postRepository: PostRepositoryProtocol
+    private let postRepository: PostRepositoryProtocol
+    @StateObject var postsViewModel: PostsViewModel
 
     init(postRepository: PostRepositoryProtocol) {
         self.postRepository = postRepository
+        self._postsViewModel = StateObject(wrappedValue: PostsViewModel(postRepository: postRepository))
     }
 
     var body: some View {
-        PostsScreenView(postRepository: postRepository)
+        PostsScreenView(viewModel: postsViewModel)
     }
 }
