@@ -1,7 +1,7 @@
 import Combine
 import CoreData
 
-class PostDao: ObservableObject, PostDaoProtocol {
+class PostDao: PostDaoProtocol {
     let container: NSPersistentContainer
     let moc: NSManagedObjectContext
 

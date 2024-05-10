@@ -1,16 +1,31 @@
-import Combine
 import SwiftUI
 
 @main
 struct HomeworkApp: App {
-    private var postDao: PostDaoProtocol = PostDao()
-    private let api: ApiServiceProtocol = ApiService()
-
     var body: some Scene {
-        let postRepository: PostRepositoryProtocol = PostRepository(postDao: postDao, api: api)
-
         WindowGroup {
-            MainScreen(postRepository: postRepository)
+            MainScreen()
+                .environmentObject(DependencyContainer())
         }
+    }
+}
+
+class DependencyContainer: ObservableObject {
+    private let api: ApiServiceProtocol = ApiService()
+    private let dao: PostDaoProtocol = PostDao()
+    private let postRepository: PostRepositoryProtocol
+
+    init() {
+        self.postRepository = PostRepository(postDao: dao, api: api)
+    }
+}
+
+protocol ViewModelProvider {
+    func makePostsViewModel() -> PostsViewModel
+}
+
+extension DependencyContainer: ViewModelProvider {
+    func makePostsViewModel() -> PostsViewModel {
+        return PostsViewModel(postRepository: postRepository)
     }
 }
