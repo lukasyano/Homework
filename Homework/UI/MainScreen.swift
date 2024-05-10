@@ -1,13 +1,9 @@
 import SwiftUI
 
 struct MainScreen: View {
-    let postRepository: PostRepositoryProtocol
-
-    init(postRepository: PostRepositoryProtocol) {
-        self.postRepository = postRepository
-    }
+    @EnvironmentObject var dependencyContainer: DependencyContainer
 
     var body: some View {
-        PostsScreenView(postRepository: postRepository)
+        PostsScreenView(viewModel: dependencyContainer.makePostsViewModel())
     }
 }

@@ -1,11 +1,7 @@
 import SwiftUI
 
 struct PostsScreenView: View {
-    @StateObject private var viewModel: PostsViewModel
-
-    init(postRepository: PostRepositoryProtocol) {
-        _viewModel = StateObject(wrappedValue: PostsViewModel(postRepository: postRepository))
-    }
+    @StateObject var viewModel: PostsViewModel
 
     var body: some View {
         NavigationStack {
@@ -57,5 +53,5 @@ struct PostsScreenView: View {
 }
 
 #Preview {
-    PostsScreenView(postRepository: PostRepository(postDao: PostDao(), api: ApiService()))
+    PostsScreenView(viewModel: PostsViewModel(postRepository: PostRepository(postDao: PostDao(), api: ApiService())))
 }

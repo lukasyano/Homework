@@ -1,6 +1,6 @@
 import Combine
 
-class PostRepository: PostRepositoryProtocol, ObservableObject {
+class PostRepository: PostRepositoryProtocol {
     private let dao: PostDaoProtocol
     private let api: ApiServiceProtocol
 
