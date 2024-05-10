@@ -5,7 +5,7 @@ import SwiftUI
 struct HomeworkApp: App {
     private let postDao: PostDaoProtocol = PostDao()
     private let api: ApiServiceProtocol = ApiService()
-    private let postRepository: PostRepository
+    private let postRepository: PostRepositoryProtocol
 
     init() {
         self.postRepository = PostRepository(postDao: postDao, api: api)
